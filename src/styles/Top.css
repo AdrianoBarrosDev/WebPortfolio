@@ -1,0 +1,140 @@
+
+/* Config titles */
+h1 {
+    font-size: 3.5vw;
+    font-weight: 350;
+}
+h2 {
+    font-size: 4.3vw;
+}
+
+
+/* Initial config mobile */
+.mobile {
+    padding: 0;
+    margin: 0;
+    justify-content: start;
+}
+
+
+.container-fluid {
+    color: white;
+    padding: 5vw;
+    font-family: "Readex Pro", serif;
+    overflow: hidden;
+}
+
+.contactButton {
+    width: 143px;
+    height: 43px;
+    color: white;
+    background-color: #2D2E4D;
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 10px;
+    border: none;
+    transition: all .2s;
+    position: relative;
+}
+
+
+
+/* Config Contact Me Button */
+.contactButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contactButton:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contactButton-white {
+    background-color: #2D2E4D;
+    color: white;
+}
+
+.contactButton::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.contactButton-white::after {
+    background-color: #2D2E4D;
+}
+
+.contactButton:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.contactButton-animated {
+    animation: moveInBottom 2s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+/* Configure the text of the class information */
+.informations {
+    font-family: "Poppins", serif;
+    font-size: 20px;
+    font-weight: 300;
+    width: 85%;
+}
+
+
+/* Div of the 3D Brain Model */
+.brain {
+    margin-left: 12vw;
+}
+
+
+/* Config Mobile */
+@media (max-width: 992px) {
+
+    .mobile {
+        width: 100%;
+        justify-content: center;
+    }
+    .container-fluid {
+        margin-top: 30px;
+    }
+    .informations {
+        width: 95%;
+        font-size: 20px;
+        margin: 0px 10px 0px 10px;
+    }
+    .brain {
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 44px;
+    }
+
+}

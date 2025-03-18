@@ -1,0 +1,37 @@
+/* Effect "Wave" to text */
+.waveColor {
+    background: linear-gradient(90deg, #2D2E4D, #2D2E4D, #FFFFFF, #2D2E4D, #2D2E4D); /* Color gradient */
+    background-size: 200% 100%; /* Adjust the size of the gradient */
+    color: transparent;
+    background-clip: text;
+    animation: wave 4s linear infinite; /* Apply the wave animation */
+}
+
+.linkButton {
+    width: 43px;
+    height: 43px;
+    border-color: #FFFFFF;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.githubButton {
+    background-image: url("/images/GitHub.png");
+}
+.linkedinButton {
+    background-image: url("/images/LinkedIn.png");
+}
+.emailButton {
+    background-image: url("/images/Email.png");
+}
+
+@keyframes wave {
+    0% {
+        background-position: -100%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}

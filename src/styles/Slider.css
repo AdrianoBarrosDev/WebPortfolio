@@ -1,0 +1,81 @@
+/* Configuration of the information in the center box in the slider */
+.infoBox {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 25px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 300;
+    transition: 0.3s;
+
+    h3 {
+        margin-bottom: 15px;
+        padding: 0;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    h4 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 14.5px;
+        line-height: 1.4;
+    }
+
+}
+
+
+/* Configuration of the information in the side boxes in the slider */
+.infoBoxSides {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 25px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 300;
+    transition: 0.3s;
+    position: relative;
+
+    h3 {
+        margin-bottom: 15px;
+        padding: 0;
+        font-size: 23px;
+        font-weight: bold;
+    }
+
+    h4 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 13.5px;
+        line-height: 1.4;
+    }
+
+    li {
+        font-size: 13px;
+    }
+
+}
+
+
+/* Configuration of boxes in the portfolio slider */
+.box {
+    transition: width 0.5s ease, height 0.5s ease, margin 0.5s ease;
+}
+.box:hover {
+    width: 510px; /* Increase the width of the InfoBox */
+}
+
+.boxSides {
+    transition: width 0.5s ease, height 0.5s ease, margin 0.5s ease;
+}
+.boxSides:hover {
+    width: 423px; /* Increase the width of the InfoBoxSides */
+}
