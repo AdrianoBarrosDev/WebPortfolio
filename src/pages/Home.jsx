@@ -1,6 +1,7 @@
 import { Sidebar } from "../components/Sidebar";
 import { Contact } from "./elements/Contact";
 import { Experience } from "./elements/Experience";
+import { Footer } from "./elements/Footer";
 import { Portfolio } from "./elements/Portfolio";
 import { Top } from "./elements/Top";
 
@@ -19,6 +20,10 @@ export function Home() {
                     <Sidebar />
                 </nav>
             </div>
+
+            <footer>
+                <Footer />
+            </footer>
         </>
     );
 }

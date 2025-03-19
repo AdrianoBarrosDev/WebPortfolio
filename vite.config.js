@@ -4,14 +4,13 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
 
+  plugins: [react()],
   server: {
     host: true,
   },
 
-  plugins: [react()],
-
-  optimizeDeps: {
-    exclude: ['@react-three/drei', 'stats.js'],
+  preview: {
+    allowedHosts: true,
   },
 
 })
