@@ -49,13 +49,15 @@ export function Experience(props) {
     return (
 
         /* Main container */
-        <section className="container-fluid pe-0" id={props.id}>
+        <section className="container-fluid pe-lg-0" id={props.id}>
 
-            <h2 className="waveColor ms-4" style={{ fontSize: "60px", fontWeight: "bold", marginBottom: "100px" }}>Experience</h2>
+            <header className="d-flex justify-content-center justify-content-lg-start align-items-center">
+                <h2 className="waveColor ms-0 ms-lg-4" style={{ marginBottom: "100px" }}>Experience</h2>
+            </header>
             <div className="row">
 
                 <ActiveSectionProvider>
-                    <div className="col-4 ms-4">
+                    <div className="col-3 ms-4">
                         <Buttons />
                     </div>
                     <div className="col d-flex flex-column align-items-end" style={{overflow: "hidden"}}>

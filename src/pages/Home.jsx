@@ -14,13 +14,13 @@ export function Home() {
                     <Top id='top'/>
                     <Portfolio id='portfolio'/>
                     <Experience id='experience'/>
-                    <Contact id='contact'/>
                 </div>
                 <nav className="col-lg-2 d-none d-lg-block" style={{ minHeight: '100vh' }}>
                     <Sidebar />
                 </nav>
             </div>
 
+            <Contact id='contact'/>
             <footer>
                 <Footer />
             </footer>
