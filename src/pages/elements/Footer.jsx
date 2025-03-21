@@ -6,12 +6,22 @@ const CustomFooter = styled.div`
     justify-content: center;
     align-items: center;
     height: 18vh;
+    margin-top: 150px;
 
     p { 
         text-align: center;
         font-size: 20px;
         font-family: "Poppins", serif;
         margin-top: 0;
+    }
+
+    /* Config Mobile */
+    @media (max-width: 992px) {
+        margin-top: 97px;
+
+        p{
+            font-size: 15px;
+        }
     }
 
 `;
