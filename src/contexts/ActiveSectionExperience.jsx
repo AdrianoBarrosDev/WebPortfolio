@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import ActiveSectionContext from "./ActiveSectionContextExperience";
+import ActiveExperienceContext from "./ActiveExperienceContext";
 
-/* Return a context with 'activeSection' and 'setActiveSection' from experience */
+/* Return a context with 'activeExperience' and 'setActiveExperience' from experience section */
 export function useActiveSection() {
-    return useContext(ActiveSectionContext);
+    return useContext(ActiveExperienceContext);
 }

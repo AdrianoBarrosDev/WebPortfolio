@@ -12,7 +12,7 @@ const Informations = styled.div`
     padding: 0;
 
     p {
-        font-size: 20px;
+        font-size: clamp(14px, 1vw, 20px);
         font-weight: bold;
         font-family: "Readex Pro", serif;
         text-align: left;
@@ -21,9 +21,10 @@ const Informations = styled.div`
 
 `;
 
-export function InfoButtonExperience( {experience} ) {
+export function InfoButtonExperience( {experience, format} ) {
 
     if(experience === "unisantosBachelorDegree") {
+        if(format === "dropdown") return "Bacharelado Ciência da Computação";
         return (
             <Informations>
                 <p>Bacharelado Ciência da Computação</p>
@@ -33,6 +34,7 @@ export function InfoButtonExperience( {experience} ) {
     }
 
     if(experience === "senacTechnicalCourse") {
+        if(format === "dropdown") return "Téc. Desenvolvimento de Sistemas";
         return (
             <Informations>
                 <p>Téc. Desenvolvimento de Sistemas</p>
@@ -42,6 +44,7 @@ export function InfoButtonExperience( {experience} ) {
     }
 
     if(experience === "obi") {
+        if(format === "dropdown") return "Olímpiada Brasileira de Programação";
         return (
             <Informations>
                 <p>Olímpiada Brasileira de Programação</p>
@@ -51,6 +54,7 @@ export function InfoButtonExperience( {experience} ) {
     }
 
     if(experience === "oboi") {
+        if(format === "dropdown") return "Olímpiada Brasileira Online de Programação";
         return (
             <Informations>
                 <p>Olímpiada Brasileira Online de Programação</p>
@@ -63,4 +67,5 @@ export function InfoButtonExperience( {experience} ) {
 
 InfoButtonExperience.propTypes = {
     experience: PropTypes.string.isRequired,
+    format: PropTypes.string,
 }

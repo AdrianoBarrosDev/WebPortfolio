@@ -18,7 +18,6 @@ const InfoBox = styled.div.attrs(props => ({
     transition: margin ${({ $timeTransition }) => $timeTransition} ease-out;
 
     h2 {
-        margin-top: 43px;
         font-size: 35px;
         font-weight: bold;
     }
@@ -36,22 +35,22 @@ const InfoBox = styled.div.attrs(props => ({
         font-family: "Poppins", serif;
         font-size: 19px;
     }
+
 `;
 
 /* Decorative Line */
 const Line = styled.div`
-    width: calc(90%);
+    width: calc(100%);
     height: 3px;
-    background-color: #2D2E4D;
+    background-color: #9696A6;
     border-radius: 30px;
-    margin: 25px 0px 25px 0px;
+    margin: 25px 0px 50px 0px;
 `;
 
 
 /* Function to return the details of the active experience */
 export function ExperienceDetails() {
-    const { activeSection } = useActiveSection();
-    const experience = activeSection;
+    const { activeExperience } = useActiveSection();
 
     // State to manage the margin-top for transition
     const [timeTransition, setTimeTransition] = useState("1s"); // Initial time margin transition value
@@ -70,16 +69,16 @@ export function ExperienceDetails() {
 
         // Cleanup timeout on unmount
         return () => clearTimeout(timer);
-    }, [activeSection]); // Effect only runs when activeSection changes
+    }, [activeExperience]); // Effect only runs when activeExperience changes
 
-    if (experience === "unisantosBachelorDegree") {
+    if (activeExperience === "unisantosBachelorDegree") {
         return (
             <InfoBox $marginTop={marginTop} $timeTransition={timeTransition}>
                 <h2>Bacharelado Ciência da Computação</h2>
                 <h3>Universidade Católica de Santos | 2025 - Presente</h3>
                 <Line />
 
-                <div style={{ width: "calc(85%)", textAlign: "start" }}>
+                <div style={{ width: "calc(98%)", textAlign: "start" }}>
                     <p>
                         Ao longo da graduação em Ciência da Computação, desenvolvi uma sólida base em algoritmos, estruturas de dados e diversas linguagens de programação, 
                         que me capacitam a resolver problemas complexos de forma lógica e eficiente.
@@ -94,14 +93,14 @@ export function ExperienceDetails() {
         );
     }
 
-    if (experience === "senacTechnicalCourse") {
+    if (activeExperience === "senacTechnicalCourse") {
         return (
             <InfoBox $marginTop={marginTop} $timeTransition={timeTransition}>
                 <h2>Téc. em Desenvolvimento de Sistemas</h2>
                 <h3>Senac | 2022 - 2024</h3>
                 <Line />
 
-                <div style={{ width: "calc(85%)", textAlign: "start" }}>
+                <div style={{ width: "calc(98%)", textAlign: "start" }}>
                     <p>
                         Durante o curso técnico, tive a oportunidade de desenvolver aplicações nas plataformas desktop, web e mobile, utilizando tecnologias como Java, HTML, CSS, JavaScript, Node.js e React. 
                         Essas aplicações foram integradas com bancos de dados MySQL e MongoDB, garantindo eficiência e escalabilidade. 
@@ -116,14 +115,14 @@ export function ExperienceDetails() {
         );
     }
 
-    if (experience === "obi") {
+    if (activeExperience === "obi") {
         return (
             <InfoBox $marginTop={marginTop} $timeTransition={timeTransition}>
                 <h2>Olímpiada Brasileira de Programação</h2>
                 <h3>(OBI) | 2024</h3>
                 <Line />
 
-                <div style={{ width: "calc(85%)", textAlign: "start" }}>
+                <div style={{ width: "calc(98%)", textAlign: "start" }}>
                     <p style={{fontSize: "17px"}}>
                         Durante a minha participação na Olimpíada Brasileira de Informática (OBI), tive a oportunidade de aprimorar e expandir significativamente minhas habilidades em algoritmos e resolução de problemas. 
                         A experiência foi extremamente enriquecedora, pois me permitiu aplicar de forma prática os conceitos de lógica de programação e estruturas de dados que venho aprendendo ao longo da minha formação.
@@ -139,20 +138,20 @@ export function ExperienceDetails() {
         );
     }
 
-    if (experience === "oboi") {
+    if (activeExperience === "oboi") {
         return (
             <InfoBox $marginTop={marginTop} $timeTransition={timeTransition}>
-                <h2 style={{fontSize: "30px"}}>Olímpiada Brasileira Online de Programação</h2>
+                <h2>Olímpiada Brasileira Online de Programação</h2>
                 <h3>(OBOI) | 2024</h3>
                 <Line />
 
-                <div style={{ width: "calc(85%)", textAlign: "start" }}>
-                    <p style={{fontSize: "17px"}}>
+                <div style={{ width: "calc(98%)", textAlign: "start" }}>
+                    <p style={{fontSize: "16.5px"}}>
                         Ao longo da OBOI, enfrentei uma série de desafios que exigiam o uso de algoritmos avançados e técnicas de otimização para lidar
                         com problemas que envolviam grandes volumes de dados, além de questões de desempenho e escalabilidade. Durante as provas, trabalhei
                         com estruturas de dados como listas, pilhas, filas, árvores e grafos, aplicando algoritmos de busca, ordenação e divisão e conquista.
                     </p>
-                    <p style={{fontSize: "17px"}}>
+                    <p style={{fontSize: "16.5px"}}>
                         A OBOI foi uma oportunidade valiosa para testar meus conhecimentos em um ambiente competitivo e, ao mesmo tempo, aprender a pensar de
                         forma mais estratégica, desenvolvendo uma visão mais ampla de como resolver problemas de forma otimizada e com foco em resultados. 
                         A experiência me proporcionou uma base sólida que, sem dúvida, será útil em desafios futuros, tanto no meio acadêmico quanto no mercado de trabalho.

@@ -13,13 +13,13 @@ export function Home() {
                 <div className="col-12 col-lg-10 p-0">
                     <Top id='top'/>
                     <Portfolio id='portfolio'/>
-                    <Experience id='experience'/>
                 </div>
                 <nav className="col-lg-2 d-none d-lg-block" style={{ minHeight: '100vh' }}>
                     <Sidebar />
                 </nav>
             </div>
 
+            <Experience id='experience'/>
             <Contact id='contact'/>
             <footer>
                 <Footer />
