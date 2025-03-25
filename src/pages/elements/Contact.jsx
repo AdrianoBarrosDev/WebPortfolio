@@ -75,7 +75,7 @@ export function Contact(props) {
     return (
         <section className="container-fluid p-0" id={props.id}>
 
-            <div className="row align-items-center" style={{ position: "relative", marginTop: "140px" }}>
+            <div className="row align-items-center" style={{ position: "relative" }}>
 
                 <img src="./images/RectangleContact.png" alt="Rectangle" style={{position: "absolute", zIndex: "-1", minHeight: "250px", padding: "0"}}/>
                 <div className="d-flex justify-content-center align-items-center circleBox p-0 position-relative">

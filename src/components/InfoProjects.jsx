@@ -17,14 +17,23 @@ const Information = styled.div`
 
     h4 {
         align-self: start;
-        margin-block: 20px;
+        margin-block: 20px 10px;
     }
 
     p {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: bold;
         color: rgba(150, 150, 166, 0.5);
     }
+
+    /* Mobile Config */
+    @media (max-width: 510px) {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
 `;
 
 // Project Button
@@ -103,7 +112,9 @@ export function InfoProjects ({ nameProject }) {
                 <h4>Healthy Clinics</h4>
                 <p>O software é uma plataforma de saúde que conecta pacientes, médicos e responsáveis por clínicas, facilitando o agendamento de consultas, a gestão de clínicas e o registro de informações médicas.</p>
                 <div className="col-12 d-flex justify-content-between">
-                    <ProjectButton>
+                    <ProjectButton 
+                        target="_blank"
+                        onClick={() => window.open("https://github.com/AdrianoBarrosDev/HealthyClinics.git")}>
                         Projeto Github
                         <img src="./images/LinkIcon.png" alt="Link Icon" />
                     </ProjectButton>
@@ -123,9 +134,11 @@ export function InfoProjects ({ nameProject }) {
 
                 <img src="./images/BrainTumorSystemThumb.png" alt="HealthyClinics"/>
                 <h4>Brain Tumor System</h4>
-                <p>O software é uma plataforma de saúde que conecta pacientes, médicos e responsáveis por clínicas, facilitando o agendamento de consultas, a gestão de clínicas e o registro de informações médicas.</p>
+                <p>Sistema para detecção de tumores cerebrais em imagens de ressonância magnética, utilizando algoritmos de processamento de imagens e inteligência artificial para identificar anomalias.</p>
                 <div className="col-12 d-flex justify-content-between">
-                    <ProjectButton>
+                    <ProjectButton 
+                        target="_blank"
+                        onClick={() => window.open("https://github.com/AdrianoBarrosDev/BrainTumorSystem.git")}>
                         Projeto Github
                         <img src="./images/LinkIcon.png" alt="Link Icon" />
                     </ProjectButton>
@@ -145,9 +158,11 @@ export function InfoProjects ({ nameProject }) {
 
                 <img src="./images/WebPortfolioThumb.png" alt="HealthyClinics"/>
                 <h4>Web Portfolio</h4>
-                <p>O software é uma plataforma de saúde que conecta pacientes, médicos e responsáveis por clínicas, facilitando o agendamento de consultas, a gestão de clínicas e o registro de informações médicas.</p>
+                <p>Desenvolvimento do meu site pessoal para exibir minhas habilidades, projetos e experiências profissionais de forma clara e atraente, destacando meu portfólio e competências.</p>
                 <div className="col-12 d-flex justify-content-between">
-                    <ProjectButton>
+                    <ProjectButton 
+                        target="_blank"
+                        onClick={() => window.open("https://github.com/AdrianoBarrosDev/WebPortfolio.git")}>
                         Projeto Github
                         <img src="./images/LinkIcon.png" alt="Link Icon" />
                     </ProjectButton>

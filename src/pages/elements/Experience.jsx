@@ -83,7 +83,7 @@ export function Experience(props) {
     return (
 
         /* Main container */
-        <ExperienceSection className="container-fluid pe-lg-0 py-lg-0 p-0 position-relative" id={props.id}>
+        <ExperienceSection className="container-fluid p-0 position-relative" id={props.id} style={{marginBottom: "250px"}}>
 
             <BoxExperience className="row col-lg-10 p-4 ps-lg-5">
 

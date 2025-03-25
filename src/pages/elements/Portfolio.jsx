@@ -15,7 +15,7 @@ const Lines = styled.div`
 export function Portfolio(props) {
 
     return (
-        <section className="container-fluid pe-lg-0" id={props.id}>
+        <section className="container-fluid pe-lg-0 pt-0 mt-0" id={props.id} style={{marginBottom: "120px"}}>
 
             <div className="row d-none d-lg-flex position-relative">
                 <Lines />
@@ -28,7 +28,7 @@ export function Portfolio(props) {
                 
             <div className="row d-none d-lg-block position-relative" style={{marginTop: "71px"}}>
                 <Lines style={{ marginTop: "12px", transform: "rotate(270deg)" }} />
-                <Lines style={{ position: "absolute", right: "12px", transform: "rotate(180deg)" }}/>
+                <Lines style={{ position: "absolute", right: "12px", bottom: 0, transform: "rotate(180deg)" }}/>
             </div>
 
         </section>

@@ -9,6 +9,13 @@ const ProjectBox = styled.div`
     border: 1px solid #2D2E4D;
     border-radius: 5px;
     padding: 0;
+
+    /* Mobile Config */
+    @media (max-width: 510px) {
+        width: 90vw;
+        height: auto;
+        padding-bottom: 20px;
+    }
 `;
 
 const ToggleViewButton = styled.button`

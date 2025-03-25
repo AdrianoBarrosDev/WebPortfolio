@@ -1,13 +1,21 @@
 import PropTypes from "prop-types";
+import styled from "styled-components";
 import Brain from "../../components/Brain";
 import { Circle, Rectangle } from "../../components/GeometricForms";
 import "../../styles/Top.css";
+
+const CustomSection = styled.section`
+    margin-bottom: 120px;
+    @media (max-width: 510px) {
+        margin-bottom: 150px;
+    }
+`;
 
 export function Top(props) {
 
     return (
         /* Main container */
-        <section className="container-fluid pe-lg-0" id={props.id}>
+        <CustomSection className="container-fluid pe-lg-0" id={props.id}>
             <div className="row position-relative">
 
                 <div className="col-12 col-lg-7" style={{zIndex: "1"}}>
@@ -68,7 +76,7 @@ export function Top(props) {
                 </div>
 
             </div>
-        </section>
+        </CustomSection>
     );
 }
 
