@@ -118,7 +118,7 @@ export function InfoProjects ({ nameProject }) {
                         Projeto Github
                         <img src="./images/LinkIcon.png" alt="Link Icon" />
                     </ProjectButton>
-                    <DetailsButton>
+                    <DetailsButton onClick={() => window.location.href="/healthyClinics"}>
                         Detalhes
                         <img src="./images/DetailsArrow.png" alt="Arrow Icon" />
                     </DetailsButton>
@@ -132,7 +132,7 @@ export function InfoProjects ({ nameProject }) {
         return (
             <Information>
 
-                <img src="./images/BrainTumorSystemThumb.png" alt="HealthyClinics"/>
+                <img src="./images/BrainTumorSystemThumb.png" alt="BrainTumorSystem"/>
                 <h4>Brain Tumor System</h4>
                 <p>Sistema para detecção de tumores cerebrais em imagens de ressonância magnética, utilizando algoritmos de processamento de imagens e inteligência artificial para identificar anomalias.</p>
                 <div className="col-12 d-flex justify-content-between">
@@ -142,7 +142,7 @@ export function InfoProjects ({ nameProject }) {
                         Projeto Github
                         <img src="./images/LinkIcon.png" alt="Link Icon" />
                     </ProjectButton>
-                    <DetailsButton>
+                    <DetailsButton onClick={() => window.location.href="/brainTumorSystem"}>
                         Detalhes
                         <img src="./images/DetailsArrow.png" alt="Arrow Icon" />
                     </DetailsButton>
@@ -156,7 +156,7 @@ export function InfoProjects ({ nameProject }) {
         return (
             <Information>
 
-                <img src="./images/WebPortfolioThumb.png" alt="HealthyClinics"/>
+                <img src="./images/WebPortfolioThumb.png" alt="WebPortfolio"/>
                 <h4>Web Portfolio</h4>
                 <p>Desenvolvimento do meu site pessoal para exibir minhas habilidades, projetos e experiências profissionais de forma clara e atraente, destacando meu portfólio e competências.</p>
                 <div className="col-12 d-flex justify-content-between">
@@ -166,7 +166,7 @@ export function InfoProjects ({ nameProject }) {
                         Projeto Github
                         <img src="./images/LinkIcon.png" alt="Link Icon" />
                     </ProjectButton>
-                    <DetailsButton>
+                    <DetailsButton onClick={() => window.location.href="/webPortfolio"}>
                         Detalhes
                         <img src="./images/DetailsArrow.png" alt="Arrow Icon" />
                     </DetailsButton>
