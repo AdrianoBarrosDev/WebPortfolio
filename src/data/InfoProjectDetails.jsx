@@ -324,7 +324,7 @@ export function InfoProjectDetails({ nameProject }) {
                         <TechnologiesLabel>POO</TechnologiesLabel>
                     </TechnologiesBox>
 
-                    <MobileLogo>
+                    <MobileLogo className="d-lg-none">
                         <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
                     </MobileLogo>
                     <MobileFooter className="d-flex d-lg-none" />
