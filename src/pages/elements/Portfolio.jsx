@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Projects } from "../../components/Projects";
 import "../../styles/Global.css";
+import { Projects } from "./ProjectDetails";
 
 /* Decorative lines */
 const Lines = styled.div`

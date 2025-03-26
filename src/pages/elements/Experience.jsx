@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Buttons } from "../../components/ExperienceButtons";
-import { ExperienceDetails } from "../../components/InfoBoxExperience";
 import { ActiveExperienceProvider } from "../../contexts/ActiveExperienceContext";
+import { ExperienceDetails } from "../../data/InfoBoxExperience";
 import "../../styles/Experience.css";
 import "../../styles/Global.css";
 

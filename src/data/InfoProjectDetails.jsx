@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { BestFeaturesProject } from "../components/BestFeaturesProject";
 
-const LeftColumn = styled.div`
+const FirstColumn = styled.div`
     font-family: "Readex Pro", serif;
     
     h1 {
@@ -23,9 +24,18 @@ const LeftColumn = styled.div`
         color: #9696A6;
         font-family: "Poppins", serif;
     }
+
+    /* Mobile Config */
+    @media (max-width: 992px) {
+        padding-inline: 35px;
+
+        h1 {
+            font-size: 40px
+        }
+    }
 `;
 
-const RightColumn = styled.div`
+const SecondColumn = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,6 +73,16 @@ const PathDiv = styled.div`
     .last {
         opacity: 1;
     }
+
+    /* Mobile Config */
+    @media (max-width: 992px) {
+        font-size: 11px;
+        gap: 10px;
+
+        .separator {
+            font-size: 15px;
+        }
+    }
 `;
 
 const BackButton = styled.button`
@@ -84,6 +104,19 @@ const BackButton = styled.button`
         transform: rotate(180deg);
         width: 16px;
         height: 15px;
+    }
+
+    /* Mobile Config */
+    @media (max-width: 992px) {
+        width: 88px;
+        height: 33px;
+        font-size: 10px;
+        gap: 14px;
+
+        img {
+            width: 12px;
+            height: 10px;
+        }
     }
 `;
 
@@ -124,6 +157,36 @@ const InfoButtons = styled.div`
         font-size: 15px;
         opacity: 0.4;
     }
+    .number {
+            font-size: 20px;
+        }
+
+    /* Mobile Config */
+    @media (max-width: 992px) {
+        img {
+            width: 25px;
+            height: 25px;
+        }
+        .circle {
+            width: 40px;
+            height: 40px;
+        }
+        .mainText {
+            font-size: 14px;
+        }
+        .secondaryText {
+            font-size: 10px;
+        }
+        .number {
+            font-size: 20px;
+        }
+    }
+`;
+
+const TechnologiesBox = styled.div`
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
 `;
 
 const TechnologiesLabel = styled.div`
@@ -145,55 +208,56 @@ const TechnologiesLabel = styled.div`
     white-space: nowrap;
 `;
 
-const BestFeatures = styled.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    width: 611px;
-    height: auto;
-    background-color: #12151A;
-    border: 1px solid #2D2E4D;
-    border-radius: 5px;
-    padding-inline: 40px;
-    padding-block: 30px;
-    font-family: "Readex Pro", serif;
-    gap: 38px;
+const MobileImage = styled.div`
+    display: none;
+    width: 100%;
+    height: 204px;
+    border: none;
+    margin-block: 52px;
 
     img {
-        width: 33px;
-        height: 33px;
-    }
-    .titleFeatures {
-        color: rgb(255, 255, 255, 0.8);
-        font-weight: bold;
-        font-size: 25px;
-        margin: 0;
-    }
-    .features {
-        color: rgb(150, 150, 166, 0.8);
-        font-size: 1vw;
-    }
-    .circle {
-        width: 1vw;
-        height: 1vw;
-        border: none;
-        border-radius: 50%;
-        background: linear-gradient(-90deg, #2D2E4D 0%, #696BB3 100%);
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        object-fit: cover;
     }
 
+    /* Mobile Config */
+    @media (max-width: 992px) {
+        display: block;
+    }
+`;
+
+const MobileLogo = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 62px;
+    
+    img {
+        width: 141px;
+        height: 112px;
+        object-fit: contain;
+    }
+`;
+
+const MobileFooter = styled.div`
+    width: 100vw;
+    height: 50px;
+    margin-left: -23px;
+    background-color: #12151A;
 `;
 
 export function InfoProjectDetails({ nameProject }) {
 
     if(nameProject === "healthyClinics") {
         return (
-            <div className="row d-flex justify-content-center" style={{marginTop: "40px", gap: "200px"}}>
+            <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
 
-                <LeftColumn className="col-5">
+                <FirstColumn className="col-lg-5">
 
-                    <div className="d-flex align-items-center gap-4">
-                        <BackButton onClick={() => window.location.href="/"}>
+                    <div className="d-flex align-items-center gap-lg-4 gap-3">
+                        <BackButton onClick={() => window.history.back()}>
                             <img src="./images/DetailsArrow.png" alt="Arrow"/>
                             Voltar
                         </BackButton>
@@ -202,7 +266,15 @@ export function InfoProjectDetails({ nameProject }) {
                             <div className="separator">&gt;</div>
                             <div className="last">Healthy Clinics</div>
                         </PathDiv>
+                        <BackButton onClick={() => window.location.href="/brainTumorSystem"}>
+                            Próximo
+                            <img src="./images/DetailsArrow.png" alt="Arrow" style={{transform: "rotate(0deg)"}}/>
+                        </BackButton>
                     </div>
+
+                    <MobileImage>
+                        <img src="./images/HealthyClinicsThumb.png" alt="Healthy Clinics" />
+                    </MobileImage>
 
                     <h1>Healthy Clinics</h1>
                     <p>
@@ -215,13 +287,13 @@ export function InfoProjectDetails({ nameProject }) {
                         permitindo um uso otimizado e personalizado de acordo com as necessidades de cada grupo.
                     </p>
 
-                    <div className="d-flex gap-5" style={{marginLeft: "36px"}}>
-                        <InfoButtons>
+                    <div className="d-flex gap-lg-5 gap-3">
+                        <InfoButtons className="left">
                             <div className="circle"> 
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
                             <div>
-                                <div className="mainText">5</div>
+                                <div className="number">5</div>
                                 <div className="secondaryText">Tecnologias Usadas</div>
                             </div>
                         </InfoButtons>
@@ -231,66 +303,38 @@ export function InfoProjectDetails({ nameProject }) {
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
                             <div>
-                                <div className="mainText">5</div>
-                                <div className="secondaryText">Tecnologias Usadas</div>
+                                <div className="mainText">Projeto Github</div>
                             </div>
                         </InfoButtons>
+                    </div>
+
+                    <div className="d-block d-lg-none">
+                        <BestFeaturesProject nameProject={nameProject}/>
                     </div>
 
                     <h2>
                         <img src="./images/CodeIcon.png" alt="Code Icon" />
                         <div>Tecnologias</div>
                     </h2>
-                    <div className="d-flex justify-content-start gap-1 col-10 flex-wrap">
+                    <TechnologiesBox className="col-10 gap-1">
                         <TechnologiesLabel>Java</TechnologiesLabel>
                         <TechnologiesLabel>SQL</TechnologiesLabel>
                         <TechnologiesLabel>Hibernate</TechnologiesLabel>
                         <TechnologiesLabel>Maven</TechnologiesLabel>
                         <TechnologiesLabel>POO</TechnologiesLabel>
-                    </div>
+                    </TechnologiesBox>
+
+                    <MobileLogo>
+                        <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
+                    </MobileLogo>
+                    <MobileFooter className="d-flex d-lg-none" />
                     
-                </LeftColumn>
+                </FirstColumn>
 
-                <RightColumn className="col-4">
+                <SecondColumn className="d-none d-lg-flex col-4">
                     <img src="./images/HealthyClinicsThumb.png" alt="Healthy Clinics" />
-                    <BestFeatures>
-                        <div className="d-flex gap-3">
-                            <img src="./images/FeatureIcon.png" alt="Feature Icon" />
-                            <h2 className="titleFeatures">Principais Funcionalidades</h2>
-                        </div>
-
-                        <div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Cadastro e Gerenciamento de Contas</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Agendamento e Controle de Status de Consultas</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Gerenciamento de Clínicas</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Relatórios Médicos das Consultas</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Gestão de Médicos</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Validações de Informações</div>
-                            </div>
-                        </div>
-
-                    </BestFeatures>
-                </RightColumn>
+                    <BestFeaturesProject nameProject={nameProject} />
+                </SecondColumn>
                 
             </div>
         );
@@ -299,12 +343,12 @@ export function InfoProjectDetails({ nameProject }) {
 
     if(nameProject === "brainTumorSystem") {
         return (
-            <div className="row d-flex justify-content-center" style={{marginTop: "40px", gap: "200px"}}>
+            <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
 
-                <LeftColumn className="col-5">
+                <FirstColumn className="col-lg-5">
 
-                    <div className="d-flex align-items-center gap-4">
-                        <BackButton onClick={() => window.location.href="/"}>
+                    <div className="d-flex align-items-center gap-lg-4 gap-3">
+                        <BackButton onClick={() => window.history.back()}>
                             <img src="./images/DetailsArrow.png" alt="Arrow"/>
                             Voltar
                         </BackButton>
@@ -313,7 +357,15 @@ export function InfoProjectDetails({ nameProject }) {
                             <div className="separator">&gt;</div>
                             <div className="last">Brain Tumor System</div>
                         </PathDiv>
+                        <BackButton onClick={() => window.location.href="/webPortfolio"}>
+                            Próximo
+                            <img src="./images/DetailsArrow.png" alt="Arrow" style={{transform: "rotate(0deg)"}}/>
+                        </BackButton>
                     </div>
+
+                    <MobileImage>
+                        <img src="./images/BrainTumorSystemThumb.png" alt="Healthy Clinics" />
+                    </MobileImage>
 
                     <h1>Brain Tumor System</h1>
                     <p>
@@ -326,13 +378,13 @@ export function InfoProjectDetails({ nameProject }) {
                         para melhores decisões clínicas e um atendimento mais eficaz aos pacientes.
                     </p>
 
-                    <div className="d-flex gap-5" style={{marginLeft: "36px"}}>
+                    <div className="d-flex gap-lg-5 gap-3">
                         <InfoButtons>
                             <div className="circle"> 
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
                             <div>
-                                <div className="mainText">5</div>
+                                <div className="number">5</div>
                                 <div className="secondaryText">Tecnologias Usadas</div>
                             </div>
                         </InfoButtons>
@@ -342,54 +394,38 @@ export function InfoProjectDetails({ nameProject }) {
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
                             <div>
-                                <div className="mainText">5</div>
-                                <div className="secondaryText">Tecnologias Usadas</div>
+                                <div className="mainText">Projeto Github</div>
                             </div>
                         </InfoButtons>
+                    </div>
+
+                    <div className="d-block d-lg-none">
+                        <BestFeaturesProject nameProject={nameProject}/>
                     </div>
 
                     <h2>
                         <img src="./images/CodeIcon.png" alt="Code Icon" />
                         <div>Tecnologias</div>
                     </h2>
-                    <div className="d-flex justify-content-start gap-1 col-10 flex-wrap">
+                    <TechnologiesBox className="col-10 gap-1">
                         <TechnologiesLabel>Python</TechnologiesLabel>
                         <TechnologiesLabel>Yolo</TechnologiesLabel>
                         <TechnologiesLabel>Ultralytics</TechnologiesLabel>
                         <TechnologiesLabel>Deep Learning</TechnologiesLabel>
                         <TechnologiesLabel>Machine Learning</TechnologiesLabel>
-                    </div>
+                    </TechnologiesBox>
+
+                    <MobileLogo>
+                        <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
+                    </MobileLogo>
+                    <MobileFooter className="d-flex d-lg-none" />
                     
-                </LeftColumn>
+                </FirstColumn>
 
-                <RightColumn className="col-4">
+                <SecondColumn className="d-none d-lg-flex col-4">
                     <img src="./images/BrainTumorSystemThumb.png" alt="Healthy Clinics" />
-                    <BestFeatures>
-                        <div className="d-flex gap-3">
-                            <img src="./images/FeatureIcon.png" alt="Feature Icon" />
-                            <h2 className="titleFeatures">Principais Funcionalidades</h2>
-                        </div>
-
-                        <div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Segmentação de Tumores Cerebrais</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Treinamento de Modelos de Inteligência Artificial</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Visualização e Manipulação de Imagem</div>
-                            </div>
-                        </div>
-
-                    </BestFeatures>
-                </RightColumn>
+                    <BestFeaturesProject nameProject={nameProject} />
+                </SecondColumn>
                 
             </div>
         );
@@ -398,12 +434,12 @@ export function InfoProjectDetails({ nameProject }) {
 
     if(nameProject === "webPortfolio") {
         return (
-            <div className="row d-flex justify-content-center" style={{marginTop: "40px", gap: "200px"}}>
+            <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
 
-                <LeftColumn className="col-5">
+                <FirstColumn className="col-lg-5">
 
-                    <div className="d-flex align-items-center gap-4">
-                        <BackButton onClick={() => window.location.href="/"}>
+                    <div className="d-flex align-items-center gap-lg-4 gap-3">
+                        <BackButton onClick={() => window.history.back()}>
                             <img src="./images/DetailsArrow.png" alt="Arrow"/>
                             Voltar
                         </BackButton>
@@ -412,7 +448,15 @@ export function InfoProjectDetails({ nameProject }) {
                             <div className="separator">&gt;</div>
                             <div className="last">Web Portfolio</div>
                         </PathDiv>
+                        <BackButton onClick={() => window.location.href="/healthyClinics"}>
+                            Próximo
+                            <img src="./images/DetailsArrow.png" alt="Arrow" style={{transform: "rotate(0deg)"}}/>
+                        </BackButton>
                     </div>
+
+                    <MobileImage>
+                        <img src="./images/WebPortfolioThumb.png" alt="Healthy Clinics" />
+                    </MobileImage>
 
                     <h1>Web Portfolio</h1>
                     <p>
@@ -421,13 +465,13 @@ export function InfoProjectDetails({ nameProject }) {
                         interessados em novos projetos e oportunidades.
                     </p>
 
-                    <div className="d-flex gap-5" style={{marginLeft: "36px"}}>
+                    <div className="d-flex gap-lg-5 gap-3">
                         <InfoButtons>
                             <div className="circle"> 
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
                             <div>
-                                <div className="mainText">8</div>
+                                <div className="number">8</div>
                                 <div className="secondaryText">Tecnologias Usadas</div>
                             </div>
                         </InfoButtons>
@@ -437,17 +481,20 @@ export function InfoProjectDetails({ nameProject }) {
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
                             <div>
-                                <div className="mainText">5</div>
-                                <div className="secondaryText">Tecnologias Usadas</div>
+                                <div className="mainText">Projeto Github</div>
                             </div>
                         </InfoButtons>
+                    </div>
+
+                    <div className="d-block d-lg-none">
+                        <BestFeaturesProject nameProject={nameProject}/>
                     </div>
 
                     <h2>
                         <img src="./images/CodeIcon.png" alt="Code Icon" />
                         <div>Tecnologias</div>
                     </h2>
-                    <div className="d-flex justify-content-start gap-1 col-10 flex-wrap">
+                    <TechnologiesBox className="col-10 gap-1">
                         <TechnologiesLabel>HTML</TechnologiesLabel>
                         <TechnologiesLabel>CSS</TechnologiesLabel>
                         <TechnologiesLabel>JavaScript</TechnologiesLabel>
@@ -456,46 +503,19 @@ export function InfoProjectDetails({ nameProject }) {
                         <TechnologiesLabel>Vite</TechnologiesLabel>
                         <TechnologiesLabel>Styled Components</TechnologiesLabel>
                         <TechnologiesLabel>BootStrap</TechnologiesLabel>
-                    </div>
+                    </TechnologiesBox>
+
+                    <MobileLogo>
+                        <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
+                    </MobileLogo>
+                    <MobileFooter className="d-flex d-lg-none" />
                     
-                </LeftColumn>
+                </FirstColumn>
 
-                <RightColumn className="col-4">
+                <SecondColumn className="d-none d-lg-flex col-4">
                     <img src="./images/WebPortfolioThumb.png" alt="Healthy Clinics"/>
-                    <BestFeatures>
-                        <div className="d-flex gap-3">
-                            <img src="./images/FeatureIcon.png" alt="Feature Icon" />
-                            <h2 className="titleFeatures">Principais Funcionalidades</h2>
-                        </div>
-
-                        <div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Modelo 3D Three.JS</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Visualização Detalhada de Projetos</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Exposição de Certificados e Tech Stacks</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Experiências Acadêmicas</div>
-                            </div>
-                            <div className="d-flex justify-content-start align-items-center gap-2">
-                                <div className="circle" />
-                                <div className="features">Contato pelo Site</div>
-                            </div>
-                        </div>
-
-                    </BestFeatures>
-                </RightColumn>
+                    <BestFeaturesProject nameProject={nameProject} />
+                </SecondColumn>
                 
             </div>
         );

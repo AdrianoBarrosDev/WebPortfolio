@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { InfoProjects } from "./InfoProjects";
+import { InfoProjects } from "../../data/InfoProjects";
 
 const ProjectBox = styled.div`
     width: 465px;

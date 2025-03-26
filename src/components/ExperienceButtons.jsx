@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useActiveSection } from '../contexts/ActiveSectionExperience';
-import { InfoButtonExperience } from './InfoButtonExperience';
+import { InfoButtonExperience } from '../data/InfoButtonExperience';
 
 
 /* Rectangle next to the buttons */

@@ -1,8 +1,8 @@
-import { Sidebar } from "../components/Sidebar";
 import { Contact } from "./elements/Contact";
 import { Experience } from "./elements/Experience";
 import { Footer } from "./elements/Footer";
 import { Portfolio } from "./elements/Portfolio";
+import { Sidebar } from "./elements/Sidebar";
 import { Top } from "./elements/Top";
 
 export function Home() {
