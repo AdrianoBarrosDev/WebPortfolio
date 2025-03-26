@@ -43,6 +43,7 @@ const SecondColumn = styled.div`
     justify-content: center;
     align-items: end;
     align-self: flex-start;
+    width: 33.33%;
     margin-top: 70px;
     gap: 40px;
 
@@ -194,6 +195,7 @@ const TechnologiesBox = styled.div`
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
+    margin-bottom: 60px;
 `;
 
 const TechnologiesLabel = styled.div`
@@ -364,7 +366,7 @@ export function InfoProjectDetails({ nameProject }) {
                     
                 </FirstColumn>
 
-                <SecondColumn className="d-none d-lg-flex col-4">
+                <SecondColumn>
                     <img src="./images/HealthyClinicsThumb.png" alt="Healthy Clinics" />
                     <BestFeaturesProject nameProject={nameProject} />
                 </SecondColumn>
@@ -455,7 +457,7 @@ export function InfoProjectDetails({ nameProject }) {
                     
                 </FirstColumn>
 
-                <SecondColumn className="d-none d-lg-flex col-4">
+                <SecondColumn>
                     <img src="./images/BrainTumorSystemThumb.png" alt="Healthy Clinics" />
                     <BestFeaturesProject nameProject={nameProject} />
                 </SecondColumn>
