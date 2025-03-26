@@ -3,6 +3,7 @@ import { BestFeaturesProject } from "../components/BestFeaturesProject";
 
 const FirstColumn = styled.div`
     font-family: "Readex Pro", serif;
+    width: 41.66667%; /* col-5 */
     
     h1 {
         color: white;
@@ -26,7 +27,8 @@ const FirstColumn = styled.div`
     }
 
     /* Mobile Config */
-    @media (max-width: 992px) {
+    @media (max-width: 1300px) {
+        width: 100%;
         padding-inline: 35px;
 
         h1 {
@@ -49,6 +51,11 @@ const SecondColumn = styled.div`
         height: 350px;
         object-fit: cover;
         border-radius: 5px;
+    }
+
+    /* Mobile Config */
+    @media (max-width: 1300px) {
+        display: none;
     }
 `;
 
@@ -75,7 +82,7 @@ const PathDiv = styled.div`
     }
 
     /* Mobile Config */
-    @media (max-width: 992px) {
+    @media (max-width: 1300px) {
         font-size: 11px;
         gap: 10px;
 
@@ -107,7 +114,7 @@ const BackButton = styled.button`
     }
 
     /* Mobile Config */
-    @media (max-width: 992px) {
+    @media (max-width: 1300px) {
         width: 88px;
         height: 33px;
         font-size: 10px;
@@ -162,7 +169,7 @@ const InfoButtons = styled.div`
         }
 
     /* Mobile Config */
-    @media (max-width: 992px) {
+    @media (max-width: 1300px) {
         img {
             width: 25px;
             height: 25px;
@@ -223,13 +230,19 @@ const MobileImage = styled.div`
     }
 
     /* Mobile Config */
-    @media (max-width: 992px) {
+    @media (max-width: 1300px) {
         display: block;
+        height: 500px;
+    }
+
+    @media (max-width: 600px) {
+        display: block;
+        height: 280px;
     }
 `;
 
 const MobileLogo = styled.div`
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     margin-block: 62px;
@@ -239,13 +252,33 @@ const MobileLogo = styled.div`
         height: 112px;
         object-fit: contain;
     }
+
+    /* Mobile Config */
+    @media (max-width: 1300px) {
+        display: flex;
+    }
+`;
+
+const MobileBestFeatures = styled.div`
+    display: none;
+    
+    /* Mobile Config */
+    @media (max-width: 1300px) {
+        display: block;
+    }
 `;
 
 const MobileFooter = styled.div`
+    display: none;
     width: 100vw;
     height: 50px;
     margin-left: -23px;
     background-color: #12151A;
+
+    /* Mobile Config */
+    @media (max-width: 1300px) {
+        display: block;
+    }
 `;
 
 export function InfoProjectDetails({ nameProject }) {
@@ -308,9 +341,9 @@ export function InfoProjectDetails({ nameProject }) {
                         </InfoButtons>
                     </div>
 
-                    <div className="d-block d-lg-none">
+                    <MobileBestFeatures>
                         <BestFeaturesProject nameProject={nameProject}/>
-                    </div>
+                    </MobileBestFeatures>
 
                     <h2>
                         <img src="./images/CodeIcon.png" alt="Code Icon" />
@@ -324,10 +357,10 @@ export function InfoProjectDetails({ nameProject }) {
                         <TechnologiesLabel>POO</TechnologiesLabel>
                     </TechnologiesBox>
 
-                    <MobileLogo className="d-lg-none">
+                    <MobileLogo>
                         <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
                     </MobileLogo>
-                    <MobileFooter className="d-flex d-lg-none" />
+                    <MobileFooter/>
                     
                 </FirstColumn>
 
@@ -399,9 +432,9 @@ export function InfoProjectDetails({ nameProject }) {
                         </InfoButtons>
                     </div>
 
-                    <div className="d-block d-lg-none">
+                    <MobileBestFeatures>
                         <BestFeaturesProject nameProject={nameProject}/>
-                    </div>
+                    </MobileBestFeatures>
 
                     <h2>
                         <img src="./images/CodeIcon.png" alt="Code Icon" />
@@ -415,10 +448,10 @@ export function InfoProjectDetails({ nameProject }) {
                         <TechnologiesLabel>Machine Learning</TechnologiesLabel>
                     </TechnologiesBox>
 
-                    <MobileLogo className="d-lg-none">
+                    <MobileLogo>
                         <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
                     </MobileLogo>
-                    <MobileFooter className="d-flex d-lg-none" />
+                    <MobileFooter/>
                     
                 </FirstColumn>
 
@@ -486,9 +519,9 @@ export function InfoProjectDetails({ nameProject }) {
                         </InfoButtons>
                     </div>
 
-                    <div className="d-block d-lg-none">
+                    <MobileBestFeatures>
                         <BestFeaturesProject nameProject={nameProject}/>
-                    </div>
+                    </MobileBestFeatures>
 
                     <h2>
                         <img src="./images/CodeIcon.png" alt="Code Icon" />
@@ -505,14 +538,14 @@ export function InfoProjectDetails({ nameProject }) {
                         <TechnologiesLabel>BootStrap</TechnologiesLabel>
                     </TechnologiesBox>
 
-                    <MobileLogo className="d-lg-none">
+                    <MobileLogo>
                         <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
                     </MobileLogo>
-                    <MobileFooter className="d-flex d-lg-none" />
+                    <MobileFooter/>
                     
                 </FirstColumn>
 
-                <SecondColumn className="d-none d-lg-flex col-4">
+                <SecondColumn className="col-4">
                     <img src="./images/WebPortfolioThumb.png" alt="Healthy Clinics"/>
                     <BestFeaturesProject nameProject={nameProject} />
                 </SecondColumn>

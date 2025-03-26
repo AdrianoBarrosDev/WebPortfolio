@@ -34,7 +34,7 @@ const BestFeatures = styled.section`
     }
 
     /* Mobile Config */
-    @media (max-width: 992px) {
+    @media (max-width: 1300px) {
         width: 100vw;
         margin-left: -23px;
         margin-top: 56px;
