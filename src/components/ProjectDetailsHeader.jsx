@@ -6,10 +6,10 @@ const CustomHeader = styled.header`
     width: 100vw;
     height: 50px;
     background-color: #12151A;
-    padding-inline: 80px;
+    padding-inline: 7.5vw;
 
     /* Mobile Config */
-    @media (max-width: 992px) {
+    @media (max-width: 1300px) {
         padding-inline: 35px;
     }
 `;
@@ -17,6 +17,7 @@ const CustomHeader = styled.header`
 const LogoButton = styled.button`
     border: none;
     background-color: transparent;
+    padding: 0;
 
     img {
         width: 43px;
@@ -33,28 +34,13 @@ const LogoButton = styled.button`
     }
 `;
 
-const TextButton = styled.button`
-    background-color: transparent;
-    color: #9696A6;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: "Readex Pro", serif;
-`;
-
-export function Header() {
+export function ProjectDetailsHeader() {
 
     return (
         <CustomHeader>
             <LogoButton onClick={() => window.location.href="/"}>
                 <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
             </LogoButton>
-            <div className="d-none d-lg-flex me-4 gap-4">
-                <TextButton>Home</TextButton>
-                <TextButton>Portfolio</TextButton>
-                <TextButton>Experience</TextButton>
-                <TextButton>Contact</TextButton>
-            </div>
         </CustomHeader>
     );
 

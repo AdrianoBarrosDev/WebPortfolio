@@ -102,7 +102,7 @@ const DetailsButton = styled.button`
     }
 `;
 
-export function InfoProjects ({ nameProject }) {
+export function InfoProjectBox ({ nameProject }) {
 
     if(nameProject === "healthyClinics") {
         return (

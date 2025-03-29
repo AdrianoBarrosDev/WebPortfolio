@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { BestFeaturesProject } from "../components/BestFeaturesProject";
 
-const FirstColumn = styled.div`
+/* Left column on larger screens (above 1300px), becomes the main column on smaller screens */
+const LeftColumn = styled.div`
     font-family: "Readex Pro", serif;
     width: 41.66667%; /* col-5 */
     
@@ -37,7 +38,8 @@ const FirstColumn = styled.div`
     }
 `;
 
-const SecondColumn = styled.div`
+/* Right column on larger screens (above 1300px), disappears on smaller screens */
+const RightColumn = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,7 +62,8 @@ const SecondColumn = styled.div`
     }
 `;
 
-const PathDiv = styled.div`
+/* Div to display the breadcrumb to the user */
+const BreadCrumb = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +96,8 @@ const PathDiv = styled.div`
     }
 `;
 
-const BackButton = styled.button`
+/* Button to navigate to projects */
+const NavigationButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,6 +132,7 @@ const BackButton = styled.button`
     }
 `;
 
+/* Buttons to display informations such as the GitHub project and the number of technologies */
 const InfoButtons = styled.div`
     display: flex;
     justify-content: center;
@@ -166,8 +171,8 @@ const InfoButtons = styled.div`
         opacity: 0.4;
     }
     .number {
-            font-size: 20px;
-        }
+        font-size: 20px;
+    }
 
     /* Mobile Config */
     @media (max-width: 1300px) {
@@ -191,6 +196,7 @@ const InfoButtons = styled.div`
     }
 `;
 
+/* Box to display the technologies labels */
 const TechnologiesBox = styled.div`
     display: flex;
     justify-content: start;
@@ -198,6 +204,7 @@ const TechnologiesBox = styled.div`
     margin-bottom: 60px;
 `;
 
+/* Labels to display the names and images of the technologies */
 const TechnologiesLabel = styled.div`
     height: 53px;
     padding: 12px 15px 12px 44px;
@@ -217,7 +224,8 @@ const TechnologiesLabel = styled.div`
     white-space: nowrap;
 `;
 
-const MobileImage = styled.div`
+/* Div displayed only when the screen size is below 1300px to show the project image */
+const MobileProjectImage = styled.div`
     display: none;
     width: 100%;
     height: 204px;
@@ -243,6 +251,7 @@ const MobileImage = styled.div`
     }
 `;
 
+/* Div displayed only when the screen size is below 1300px to show the site logo */
 const MobileLogo = styled.div`
     display: none;
     justify-content: center;
@@ -261,6 +270,7 @@ const MobileLogo = styled.div`
     }
 `;
 
+/* Div displayed only when the screen size is below 1300px to showcase the best features on mobile screens */
 const MobileBestFeatures = styled.div`
     display: none;
     
@@ -270,6 +280,7 @@ const MobileBestFeatures = styled.div`
     }
 `;
 
+/* Div displayed only when the screen size is below 1300px to show the mobile footer */
 const MobileFooter = styled.div`
     display: none;
     width: 100vw;
@@ -285,32 +296,37 @@ const MobileFooter = styled.div`
 
 export function InfoProjectDetails({ nameProject }) {
 
+    // If the project to be displayed is "Healthy Clinics"
     if(nameProject === "healthyClinics") {
         return (
             <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
+                
+                {/* Left column when the screen size is above 1300px and changes to main column below that */}
+                <LeftColumn className="col-lg-5">
 
-                <FirstColumn className="col-lg-5">
-
+                    {/* Div to display the navigation buttons and the breadcrumb */}
                     <div className="d-flex align-items-center gap-lg-4 gap-3">
-                        <BackButton onClick={() => window.history.back()}>
+                        <NavigationButton onClick={() => window.history.back()}>
                             <img src="./images/DetailsArrow.png" alt="Arrow"/>
                             Voltar
-                        </BackButton>
-                        <PathDiv>
+                        </NavigationButton>
+                        <BreadCrumb>
                             <div className="first">Projects</div>
                             <div className="separator">&gt;</div>
                             <div className="last">Healthy Clinics</div>
-                        </PathDiv>
-                        <BackButton onClick={() => window.location.href="/brainTumorSystem"}>
+                        </BreadCrumb>
+                        <NavigationButton onClick={() => window.location.href="/brainTumorSystem"}>
                             Próximo
                             <img src="./images/DetailsArrow.png" alt="Arrow" style={{transform: "rotate(0deg)"}}/>
-                        </BackButton>
+                        </NavigationButton>
                     </div>
 
-                    <MobileImage>
+                    {/* Div to display the project image when the screen size is below 1300px */}
+                    <MobileProjectImage>
                         <img src="./images/HealthyClinicsThumb.png" alt="Healthy Clinics" />
-                    </MobileImage>
+                    </MobileProjectImage>
 
+                    {/* Informations about the project */}
                     <h1>Healthy Clinics</h1>
                     <p>
                         Este projeto tem como objetivo o desenvolvimento de um sistema de gestão para clínicas de saúde, com foco no atendimento tanto de pacientes quanto na agenda de médicos e gestão de clínicas. 
@@ -322,6 +338,7 @@ export function InfoProjectDetails({ nameProject }) {
                         permitindo um uso otimizado e personalizado de acordo com as necessidades de cada grupo.
                     </p>
 
+                    {/* Div to display the information buttons */}
                     <div className="d-flex gap-lg-5 gap-3">
                         <InfoButtons className="left">
                             <div className="circle"> 
@@ -343,10 +360,12 @@ export function InfoProjectDetails({ nameProject }) {
                         </InfoButtons>
                     </div>
 
+                    {/* Displayed the best features on mobile screens when the screen size is below 1300px */}
                     <MobileBestFeatures>
                         <BestFeaturesProject nameProject={nameProject}/>
                     </MobileBestFeatures>
 
+                    {/* Tecnologies Section */}
                     <h2>
                         <img src="./images/CodeIcon.png" alt="Code Icon" />
                         <div>Tecnologias</div>
@@ -359,49 +378,58 @@ export function InfoProjectDetails({ nameProject }) {
                         <TechnologiesLabel>POO</TechnologiesLabel>
                     </TechnologiesBox>
 
+                    {/* Site logo displayed only when the screen size is below 1300px */}
                     <MobileLogo>
                         <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
                     </MobileLogo>
+
+                    {/* Mobile footer displayed only when the screen size is below 1300px */}
                     <MobileFooter/>
                     
-                </FirstColumn>
+                </LeftColumn>
 
-                <SecondColumn>
+                {/* Right column when the screen size is above 1300px */}
+                <RightColumn>
                     <img src="./images/HealthyClinicsThumb.png" alt="Healthy Clinics" />
                     <BestFeaturesProject nameProject={nameProject} />
-                </SecondColumn>
+                </RightColumn>
                 
             </div>
         );
     }
 
 
+    // If the project to be displayed is "Brain Tumor System"
     if(nameProject === "brainTumorSystem") {
         return (
             <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
+                    
+                {/* Left column when the screen size is above 1300px and changes to main column below that */}
+                <LeftColumn className="col-lg-5">
 
-                <FirstColumn className="col-lg-5">
-
+                    {/* Div to display the navigation buttons and the breadcrumb */}
                     <div className="d-flex align-items-center gap-lg-4 gap-3">
-                        <BackButton onClick={() => window.history.back()}>
+                        <NavigationButton onClick={() => window.history.back()}>
                             <img src="./images/DetailsArrow.png" alt="Arrow"/>
                             Voltar
-                        </BackButton>
-                        <PathDiv>
+                        </NavigationButton>
+                        <BreadCrumb>
                             <div className="first">Projects</div>
                             <div className="separator">&gt;</div>
                             <div className="last">Brain Tumor System</div>
-                        </PathDiv>
-                        <BackButton onClick={() => window.location.href="/webPortfolio"}>
+                        </BreadCrumb>
+                        <NavigationButton onClick={() => window.location.href="/webPortfolio"}>
                             Próximo
                             <img src="./images/DetailsArrow.png" alt="Arrow" style={{transform: "rotate(0deg)"}}/>
-                        </BackButton>
+                        </NavigationButton>
                     </div>
 
-                    <MobileImage>
+                    {/* Div to display the project image when the screen size is below 1300px */}
+                    <MobileProjectImage>
                         <img src="./images/BrainTumorSystemThumb.png" alt="Healthy Clinics" />
-                    </MobileImage>
+                    </MobileProjectImage>
 
+                    {/* Informations about the project */}
                     <h1>Brain Tumor System</h1>
                     <p>
                         O sistema utiliza técnicas de aprendizado de máquina e visão computacional para analisar imagens de ressonância magnética (RM) de cérebros humanos, identificando e localizando tumores, 
@@ -412,7 +440,8 @@ export function InfoProjectDetails({ nameProject }) {
                         Essa solução busca otimizar o processo de detecção de anomalias cerebrais, proporcionando maior precisão e agilidade na avaliação de exames de RM, o que pode contribuir 
                         para melhores decisões clínicas e um atendimento mais eficaz aos pacientes.
                     </p>
-
+        
+                    {/* Div to display the information buttons */}
                     <div className="d-flex gap-lg-5 gap-3">
                         <InfoButtons>
                             <div className="circle"> 
@@ -434,10 +463,12 @@ export function InfoProjectDetails({ nameProject }) {
                         </InfoButtons>
                     </div>
 
+                    {/* Displayed the best features on mobile screens when the screen size is below 1300px */}
                     <MobileBestFeatures>
                         <BestFeaturesProject nameProject={nameProject}/>
                     </MobileBestFeatures>
 
+                    {/* Tecnologies Section */}
                     <h2>
                         <img src="./images/CodeIcon.png" alt="Code Icon" />
                         <div>Tecnologias</div>
@@ -450,56 +481,66 @@ export function InfoProjectDetails({ nameProject }) {
                         <TechnologiesLabel>Machine Learning</TechnologiesLabel>
                     </TechnologiesBox>
 
+                    {/* Site logo displayed only when the screen size is below 1300px */}
                     <MobileLogo>
                         <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
                     </MobileLogo>
+
+                    {/* Mobile footer displayed only when the screen size is below 1300px */}
                     <MobileFooter/>
                     
-                </FirstColumn>
+                </LeftColumn>
 
-                <SecondColumn>
+                {/* Right column when the screen size is above 1300px */}
+                <RightColumn>
                     <img src="./images/BrainTumorSystemThumb.png" alt="Healthy Clinics" />
                     <BestFeaturesProject nameProject={nameProject} />
-                </SecondColumn>
+                </RightColumn>
                 
             </div>
         );
     }
 
 
+    // If the project to be displayed is "Web Portfolio"
     if(nameProject === "webPortfolio") {
         return (
             <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
+                
+                {/* Left column when the screen size is above 1300px and changes to main column below that */}
+                <LeftColumn className="col-lg-5">
 
-                <FirstColumn className="col-lg-5">
-
+                    {/* Div to display the navigation buttons and the breadcrumb */}
                     <div className="d-flex align-items-center gap-lg-4 gap-3">
-                        <BackButton onClick={() => window.history.back()}>
+                        <NavigationButton onClick={() => window.history.back()}>
                             <img src="./images/DetailsArrow.png" alt="Arrow"/>
                             Voltar
-                        </BackButton>
-                        <PathDiv>
+                        </NavigationButton>
+                        <BreadCrumb>
                             <div className="first">Projects</div>
                             <div className="separator">&gt;</div>
                             <div className="last">Web Portfolio</div>
-                        </PathDiv>
-                        <BackButton onClick={() => window.location.href="/healthyClinics"}>
+                        </BreadCrumb>
+                        <NavigationButton onClick={() => window.location.href="/healthyClinics"}>
                             Próximo
                             <img src="./images/DetailsArrow.png" alt="Arrow" style={{transform: "rotate(0deg)"}}/>
-                        </BackButton>
+                        </NavigationButton>
                     </div>
 
-                    <MobileImage>
+                    {/* Div to display the project image when the screen size is below 1300px */}
+                    <MobileProjectImage>
                         <img src="./images/WebPortfolioThumb.png" alt="Healthy Clinics" />
-                    </MobileImage>
+                    </MobileProjectImage>
 
+                    {/* Informations about the project */}
                     <h1>Web Portfolio</h1>
                     <p>
                         Este portfólio foi criado para destacar minhas habilidades, conhecimentos e os projetos em que estive envolvido. Ele funciona como uma vitrine da minha proficiência em diversas tecnologias 
                         e da minha capacidade de desenvolver soluções web inovadoras e funcionais. Através desta plataforma, meu objetivo é demonstrar minhas competências e atrair potenciais empregadores ou colaboradores 
                         interessados em novos projetos e oportunidades.
                     </p>
-
+                    
+                    {/* Div to display the information buttons */}
                     <div className="d-flex gap-lg-5 gap-3">
                         <InfoButtons>
                             <div className="circle"> 
@@ -521,10 +562,12 @@ export function InfoProjectDetails({ nameProject }) {
                         </InfoButtons>
                     </div>
 
+                    {/* Displayed the best features on mobile screens when the screen size is below 1300px */}
                     <MobileBestFeatures>
                         <BestFeaturesProject nameProject={nameProject}/>
                     </MobileBestFeatures>
 
+                    {/* Tecnologies Section */}
                     <h2>
                         <img src="./images/CodeIcon.png" alt="Code Icon" />
                         <div>Tecnologias</div>
@@ -540,17 +583,21 @@ export function InfoProjectDetails({ nameProject }) {
                         <TechnologiesLabel>BootStrap</TechnologiesLabel>
                     </TechnologiesBox>
 
+                    {/* Site logo displayed only when the screen size is below 1300px */}
                     <MobileLogo>
                         <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
                     </MobileLogo>
+
+                    {/* Mobile footer displayed only when the screen size is below 1300px */}
                     <MobileFooter/>
                     
-                </FirstColumn>
+                </LeftColumn>
 
-                <SecondColumn className="col-4">
+                {/* Right column when the screen size is above 1300px */}
+                <RightColumn>
                     <img src="./images/WebPortfolioThumb.png" alt="Healthy Clinics"/>
                     <BestFeaturesProject nameProject={nameProject} />
-                </SecondColumn>
+                </RightColumn>
                 
             </div>
         );

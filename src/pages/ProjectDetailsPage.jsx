@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Header } from "../components/ProjectHeader";
+import { ProjectDetailsHeader } from "../components/ProjectDetailsHeader";
 import { InfoProjectDetails } from "../data/InfoProjectDetails";
 
 
@@ -16,8 +16,13 @@ export function DetailsPage({ nameProject }) {
 
     return (
         <DetailsContainer className="d-flex flex-column col-12 m-0 p-0">
-            <Header />
+
+            {/* Project Header */}
+            <ProjectDetailsHeader />
+
+            {/* Component responsible for displaying project details, using the project name passed as a prop */}
             <InfoProjectDetails nameProject={nameProject} />
+
         </DetailsContainer>
     );
 

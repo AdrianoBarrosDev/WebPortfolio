@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { PortfolioContent } from "../../components/PortfolioContent";
 import "../../styles/Global.css";
-import { Projects } from "./ProjectDetails";
 
 /* Decorative lines */
 const Lines = styled.div`
@@ -24,7 +24,8 @@ export function Portfolio(props) {
 
             <h2 className="row d-flex justify-content-center align-items-center waveColor">Portfolio</h2>
 
-            <Projects />
+            {/* Component responsible for displaying the active portfolio content */}
+            <PortfolioContent />
                 
             <div className="row d-none d-lg-block position-relative" style={{marginTop: "71px"}}>
                 <Lines style={{ marginTop: "12px", transform: "rotate(270deg)" }} />
