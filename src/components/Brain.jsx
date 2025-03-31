@@ -5,7 +5,6 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 function Brain() {
   const canvasRef = useRef();
-  const [isInteracting, setIsInteracting] = useState(false); // State to control if interacting with the scene
   const [width, setWidth] = useState(window.innerWidth); // Track window width for dynamic canvas width
 
   // Update width whenever the window is resized
@@ -46,27 +45,13 @@ function Brain() {
     canvasRef.current.addEventListener("webglcontextlost", handleContextLoss, false);
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableZoom = true; // Enable zoom
+    controls.enableZoom = false; // Enable zoom
     controls.enablePan = false; // Disable pan
+    controls.autoRotate = true;
     controls.update(); // Necessary for OrbitControls to work
-
-    // Camera rotation animation function
-    let angle = 0;
-    const radius = 2;
-    const target = new THREE.Vector3(0, 0, 0);
-    const targetPosition = new THREE.Vector3(radius, 0, 0);
 
     function animate() {
       requestAnimationFrame(animate);
-
-      if (!isInteracting) {
-        angle += 0.005; // Rotation speed
-        targetPosition.x = radius * Math.cos(angle);
-        targetPosition.z = radius * Math.sin(angle);
-        camera.position.lerp(targetPosition, 0.05); // Smooth interpolation
-        camera.lookAt(target); // Keep the camera looking at the center
-      }
-
       controls.update(); // Update the controls every frame
       renderer.render(scene, camera);
     }
@@ -98,20 +83,11 @@ function Brain() {
       console.error("Error loading model:", error);
     });
 
-    // Handle user interactions with controls
-    controls.addEventListener("start", () => {
-      setIsInteracting(true);
-    });
-
-    controls.addEventListener("end", () => {
-      setIsInteracting(false);
-    });
-
     // Cleanup resources when component unmounts
     return () => {
       controls.dispose();
     };
-  }, [isInteracting, width]); // Add width as a dependency to reinitialize when window size changes
+  }, [width]); // Add width as a dependency to reinitialize when window size changes
 
   return (
     <canvas
