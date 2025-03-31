@@ -75,7 +75,14 @@ export function Contact(props) {
     return (
         <section className="container-fluid p-0" id={props.id}>
 
-            <div className="row align-items-center" style={{ position: "relative" }}>
+            <div 
+                className="row align-items-center" 
+                style={{ position: "relative" }} 
+                
+                // Animations
+                data-aos="fade-up" 
+                data-aos-duration="800"
+            >
 
                 <img src="./images/RectangleContact.png" alt="Rectangle" style={{position: "absolute", zIndex: "-1", minHeight: "250px", padding: "0"}}/>
                 <div className="d-flex justify-content-center align-items-center circleBox p-0 position-relative">
@@ -86,7 +93,13 @@ export function Contact(props) {
 
             </div>
 
-            <InfoBox className="row">
+            <InfoBox 
+                className="row"
+                
+                // Animations
+                data-aos="fade-down" 
+                data-aos-duration="800"
+            >
 
                 <h2 className="waveColor title">Contact</h2>
                 <p style={{margin: "68px 0px 58px 0px"}}>Você pode me contatar pelas seguintes opções</p>

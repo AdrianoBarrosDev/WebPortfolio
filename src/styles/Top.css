@@ -77,24 +77,6 @@ h2 {
     opacity: 0;
 }
 
-.contactButton-animated {
-    animation: moveInBottom 2s ease-out;
-    animation-fill-mode: backwards;
-}
-
-@keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
-
 
 /* Configure the text of the class information */
 .informations {

@@ -2,7 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 import { CertificateContent, ProjectsContent, TechContent } from "../data/InfoPortfolioContent";
 
-
 const ContentButton = styled.button`
     display: flex;
     flex-direction: column;
@@ -65,10 +64,18 @@ export function PortfolioContent() {
         <div className="d-flex flex-column justify-content-center align-items-center">
             
             {/* Div to display the content buttons in the portfolio */}
-            <div className="d-flex justify-content-center gap-4" style={{marginTop: "60px"}}>
+            <div 
+                className="d-flex justify-content-center gap-4" 
+                style={{marginTop: "60px"}}
+
+                // Animations
+                data-aos="zoom-in-up"
+                data-aos-duration="800"
+                data-aos-easing="in-out"
+            >
                 <ContentButton 
                     id="projectsButton" 
-                    className="col-4"
+                    className="col-4 hidden"
                     selected={activePortfolioSection === 0}
                     onClick={() => handleClick(0)}
                 >
@@ -77,7 +84,7 @@ export function PortfolioContent() {
                 </ContentButton>
                 <ContentButton 
                     id="certificatesButton" 
-                    className="col-4" 
+                    className="col-4 hidden" 
                     selected={activePortfolioSection === 1}
                     onClick={() => handleClick(1)}
                 >
@@ -86,7 +93,7 @@ export function PortfolioContent() {
                 </ContentButton>
                 <ContentButton 
                     id="techStacksButton" 
-                    className="col-4"
+                    className="col-4 hidden"
                     selected={activePortfolioSection === 2}
                     onClick={() => handleClick(2)}
                 >
@@ -101,7 +108,6 @@ export function PortfolioContent() {
             {sections[activePortfolioSection] === "techStacks" && <TechContent />}
             
         </div>
-        
 
     );
 

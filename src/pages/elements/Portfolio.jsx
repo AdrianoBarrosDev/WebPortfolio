@@ -17,17 +17,25 @@ export function Portfolio(props) {
     return (
         <section className="container-fluid pe-lg-0 pt-0 mt-0" id={props.id} style={{marginBottom: "120px"}}>
 
-            <div className="row d-none d-lg-flex position-relative">
+            <div className="row d-none d-lg-flex position-relative" data-aos="fade-up" data-aos-duration="800">
                 <Lines />
                 <Lines style={{ position: "absolute", right: "12px", transform: "rotate(90deg)" }}/>
             </div>
 
-            <h2 className="row d-flex justify-content-center align-items-center waveColor">Portfolio</h2>
+            <h2 
+                className="row d-flex justify-content-center align-items-center waveColor"
+
+                // Animation
+                data-aos="fade-up"
+                data-aos-duration="800"
+            >
+                Portfolio
+            </h2>
 
             {/* Component responsible for displaying the active portfolio content */}
             <PortfolioContent />
                 
-            <div className="row d-none d-lg-block position-relative" style={{marginTop: "71px"}}>
+            <div className="row d-none d-lg-block position-relative" data-aos="fade-up" data-aos-duration="800" style={{marginTop: "71px"}}>
                 <Lines style={{ marginTop: "12px", transform: "rotate(270deg)" }} />
                 <Lines style={{ position: "absolute", right: "12px", bottom: 0, transform: "rotate(180deg)" }}/>
             </div>

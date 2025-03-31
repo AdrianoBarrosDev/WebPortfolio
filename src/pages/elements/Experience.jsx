@@ -88,7 +88,7 @@ export function Experience(props) {
             <BoxExperience className="row col-lg-10 p-4 ps-lg-5">
 
                 <ActiveExperienceProvider>
-                    <div className="col-lg-3 ms-lg-4">
+                    <div className="col-lg-3 ms-lg-4" data-aos="fade-right" data-aos-duration="800">
                         <div className="waveColor title">Experience</div>
                         <Buttons />
                     </div>

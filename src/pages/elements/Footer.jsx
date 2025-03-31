@@ -7,6 +7,7 @@ const CustomFooter = styled.div`
     align-items: center;
     height: 18vh;
     margin-top: 150px;
+    overflow: hidden;
 
     p { 
         text-align: center;
@@ -29,7 +30,11 @@ const CustomFooter = styled.div`
 export function Footer() {
 
     return (
-        <CustomFooter>
+        <CustomFooter 
+            // Animations
+            data-aos="fade-up" 
+            data-aos-duration="800"
+        >
             <p>Made by Adriano Barros</p>
             <p>@ All rights reserved</p>
         </CustomFooter>

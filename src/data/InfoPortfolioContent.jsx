@@ -2,6 +2,19 @@ import { useState } from "react";
 import styled from "styled-components";
 import { InfoProjectBox } from "./InfoProjectBox";
 
+const Content = styled.div`
+    .hiddenBox {
+        opacity: 0;
+        transform: scale(0.8) translateY(50px);
+        transition: opacity 1s ease, transform 2s ease;
+    }
+
+    .show {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+`;
+
 const ProjectBox = styled.div`
     width: 465px;
     height: 462px;
@@ -89,19 +102,30 @@ export function ProjectsContent() {
     };
 
     return (
-        <>
+        <div className="d-flex flex-column justify-content-center align-items-center">
             <div className="row justify-content-center align-items-center gap-4" style={{marginTop: "60px"}}>
                 {initialProjects.map((item) => (
-                    <ProjectBox key={item} className="col-lg-4 col-12">
+                    <ProjectBox 
+                        key={item} 
+                        className="col-lg-4 col-12 hiddenBox"
+
+                        // Animations
+                        data-aos="zoom-in"
+                        data-aos-duration="800"
+                    >
                         <InfoProjectBox nameProject={item}/>
                     </ProjectBox>
                 ))}
             </div>
 
-            <div className="row" style={{marginTop: "65px"}}>
+            <div
+                data-aos="fade-up"
+                data-aos-duration="800"
+                style={{marginTop: "65px"}}
+            >
                 <ToggleViewButton onClick={handleClick}>{labelButton}</ToggleViewButton>
             </div>
-        </>
+        </div>
     );
 }
 
@@ -112,7 +136,14 @@ export function CertificateContent() {
         <>
             <div className="row justify-content-center align-items-center gap-4" style={{marginTop: "60px"}}>
                 {certificateList.map((item) => (
-                    <CertificateBox key={item} className="col-lg-4 col-12">
+                    <CertificateBox 
+                        key={item} 
+                        className="col-lg-4 col-12"
+
+                        // Animations
+                        data-aos="zoom-in"
+                        data-aos-duration="800"
+                    >
                         <img src={`./images/${item.toUpperCase()}Certificate.png`} alt={`${item.toUpperCase()} Certificate`} />
                     </CertificateBox>
                 ))}
@@ -130,7 +161,14 @@ export function TechContent() {
         <>
             <div className="row justify-content-center align-items-center gap-4" style={{marginTop: "60px", width: "93.31%"}}>
                 {techList.map((item, index) => (
-                    <TechBox key={item} className="col-lg-4 col-12">
+                    <TechBox 
+                        key={item} 
+                        className="col-lg-4 col-12"
+
+                        // Animations
+                        data-aos="zoom-in"
+                        data-aos-duration="800"
+                    >
                         <img src={`./images/TechIcons/${pathImageTechList[index]}.png`} alt={`${item} Image`} />
                         {item}
                     </TechBox>

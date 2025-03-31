@@ -1,13 +1,8 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useActiveSection } from "../contexts/ActiveSectionExperience";
 
 /* Settings to the box that will have the information */
-const InfoBox = styled.div.attrs(props => ({
-    style: {
-        marginTop: props.$marginTop,  // Aplicando corretamente sem passar ao DOM
-    }
-}))`
+const InfoBox = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
@@ -15,7 +10,6 @@ const InfoBox = styled.div.attrs(props => ({
     align-items: center;
     text-align: center;
     overflow: hidden;
-    transition: margin ${({ $timeTransition }) => $timeTransition} ease-out;
 
     h2 {
         font-size: 35px;
@@ -52,28 +46,9 @@ const Line = styled.div`
 export function ExperienceDetails() {
     const { activeExperience } = useActiveSection();
 
-    // State to manage the margin-top for transition
-    const [timeTransition, setTimeTransition] = useState("1s"); // Initial time margin transition value
-    const [marginTop, setMarginTop] = useState("-600px"); // Initial margin-top value
-
-    // Effect to set margin-top to 0 after component mounts
-    useEffect(() => {
-
-        setTimeTransition("0s");
-        setMarginTop("-600px"); // Set the margin-top to a different value when the component is rendered
-        
-        const timer = setTimeout(() => {
-            setTimeTransition("1s");
-            setMarginTop("0px"); // Reset the margin-top to 0 after the transition time
-        }, 300); // Delay to ensure the margin-top change happens after component renders
-
-        // Cleanup timeout on unmount
-        return () => clearTimeout(timer);
-    }, [activeExperience]); // Effect only runs when activeExperience changes
-
     if (activeExperience === "unisantosBachelorDegree") {
         return (
-            <InfoBox $marginTop={marginTop} $timeTransition={timeTransition}>
+            <InfoBox data-aos="fade-down" data-aos-duration="800">
                 <h2>Bacharelado Ciência da Computação</h2>
                 <h3>Universidade Católica de Santos | 2025 - Presente</h3>
                 <Line />
@@ -95,7 +70,7 @@ export function ExperienceDetails() {
 
     if (activeExperience === "senacTechnicalCourse") {
         return (
-            <InfoBox $marginTop={marginTop} $timeTransition={timeTransition}>
+            <InfoBox>
                 <h2>Téc. em Desenvolvimento de Sistemas</h2>
                 <h3>Senac | 2022 - 2024</h3>
                 <Line />
@@ -117,7 +92,7 @@ export function ExperienceDetails() {
 
     if (activeExperience === "obi") {
         return (
-            <InfoBox $marginTop={marginTop} $timeTransition={timeTransition}>
+            <InfoBox>
                 <h2>Olímpiada Brasileira de Programação</h2>
                 <h3>(OBI) | 2024</h3>
                 <Line />
@@ -140,7 +115,7 @@ export function ExperienceDetails() {
 
     if (activeExperience === "oboi") {
         return (
-            <InfoBox $marginTop={marginTop} $timeTransition={timeTransition}>
+            <InfoBox>
                 <h2>Olímpiada Brasileira Online de Programação</h2>
                 <h3>(OBOI) | 2024</h3>
                 <Line />

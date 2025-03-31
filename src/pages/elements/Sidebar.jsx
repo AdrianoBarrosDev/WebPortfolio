@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 
@@ -18,9 +18,17 @@ const CenterDiv = styled.div`
     color: #9696A6;
     position: fixed;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(150%, -50%);
     margin-left: 7.5vw;
     z-index: 1;
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 0.8s ease-in-out;
+
+    &.show {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
 `;
 
 
@@ -50,6 +58,8 @@ export function Sidebar() {
     const sections = ["top", "portfolio", "experience", "contact"];
     const [activeSection, setActiveSection] = useState("top");
     const [marginTopValue, setMarginTopValue] = useState(6);
+    const sidebarRef = useRef(null);
+
 
     // Function activated when a button is pressed
     const handleClick = section => {
@@ -99,9 +109,18 @@ export function Sidebar() {
         }
     }
 
+    useEffect(() => {
+        // Aplica a classe "show" após a montagem do componente
+        setTimeout(() => {
+            if (sidebarRef.current) {
+                sidebarRef.current.classList.add("show");
+            }
+        }, 0);
+    }, []);
+
     return (
-        <>
-            <CenterDiv className="row p-0">
+        <div style={{ position: "relative" }}>
+            <CenterDiv className="row p-0 hidden" ref={sidebarRef}>
 
                     <div className="d-flex justify-content-end col p-0">
                         <Rectangle style={{marginTop: `${marginTopValue}px`}}></Rectangle>
@@ -124,7 +143,7 @@ export function Sidebar() {
                     </div>
 
             </CenterDiv>
-        </>
+        </div>
 
     );
 }
