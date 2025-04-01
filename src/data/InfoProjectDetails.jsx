@@ -133,7 +133,7 @@ const NavigationButton = styled.button`
 `;
 
 /* Buttons to display informations such as the GitHub project and the number of technologies */
-const InfoButtons = styled.div`
+const InfoButtons = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,6 +172,7 @@ const InfoButtons = styled.div`
     }
     .number {
         font-size: 20px;
+        text-align: start;
     }
 
     /* Mobile Config */
@@ -340,7 +341,7 @@ export function InfoProjectDetails({ nameProject }) {
 
                     {/* Div to display the information buttons */}
                     <div className="d-flex gap-lg-5 gap-3">
-                        <InfoButtons className="left">
+                        <InfoButtons onClick={() => document.getElementById("technologiesSection")?.scrollIntoView({ behavior: "smooth" })}>
                             <div className="circle"> 
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
@@ -350,7 +351,7 @@ export function InfoProjectDetails({ nameProject }) {
                             </div>
                         </InfoButtons>
 
-                        <InfoButtons>
+                        <InfoButtons onClick={() => window.open("https://github.com/AdrianoBarrosDev/HealthyClinics", "_blank")}>
                             <div className="circle"> 
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
@@ -366,17 +367,20 @@ export function InfoProjectDetails({ nameProject }) {
                     </MobileBestFeatures>
 
                     {/* Tecnologies Section */}
-                    <h2>
-                        <img src="./images/CodeIcon.png" alt="Code Icon" />
-                        <div>Tecnologias</div>
-                    </h2>
-                    <TechnologiesBox className="col-10 gap-1">
-                        <TechnologiesLabel>Java</TechnologiesLabel>
-                        <TechnologiesLabel>SQL</TechnologiesLabel>
-                        <TechnologiesLabel>Hibernate</TechnologiesLabel>
-                        <TechnologiesLabel>Maven</TechnologiesLabel>
-                        <TechnologiesLabel>POO</TechnologiesLabel>
-                    </TechnologiesBox>
+                    <div id="technologiesSection">
+                        <h2>
+                            <img src="./images/CodeIcon.png" alt="Code Icon" />
+                            <div>Tecnologias</div>
+                        </h2>
+                        <TechnologiesBox className="col-10 gap-1">
+                            <TechnologiesLabel>Java</TechnologiesLabel>
+                            <TechnologiesLabel>SQL</TechnologiesLabel>
+                            <TechnologiesLabel>Hibernate</TechnologiesLabel>
+                            <TechnologiesLabel>Maven</TechnologiesLabel>
+                            <TechnologiesLabel>POO</TechnologiesLabel>
+                        </TechnologiesBox>
+                    </div>
+                    
 
                     {/* Site logo displayed only when the screen size is below 1300px */}
                     <MobileLogo>
@@ -443,7 +447,7 @@ export function InfoProjectDetails({ nameProject }) {
         
                     {/* Div to display the information buttons */}
                     <div className="d-flex gap-lg-5 gap-3">
-                        <InfoButtons>
+                        <InfoButtons onClick={() => document.getElementById("tecnologiesBrainTumorSystem")?.scrollIntoView({ behavior: "smooth" })}>
                             <div className="circle"> 
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
@@ -453,7 +457,7 @@ export function InfoProjectDetails({ nameProject }) {
                             </div>
                         </InfoButtons>
 
-                        <InfoButtons>
+                        <InfoButtons onClick={() => window.open("https://github.com/AdrianoBarrosDev/BrainTumorSystem", "_blank")}>
                             <div className="circle"> 
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
@@ -469,17 +473,20 @@ export function InfoProjectDetails({ nameProject }) {
                     </MobileBestFeatures>
 
                     {/* Tecnologies Section */}
-                    <h2>
-                        <img src="./images/CodeIcon.png" alt="Code Icon" />
-                        <div>Tecnologias</div>
-                    </h2>
-                    <TechnologiesBox className="col-10 gap-1">
-                        <TechnologiesLabel>Python</TechnologiesLabel>
-                        <TechnologiesLabel>Yolo</TechnologiesLabel>
-                        <TechnologiesLabel>Ultralytics</TechnologiesLabel>
-                        <TechnologiesLabel>Deep Learning</TechnologiesLabel>
-                        <TechnologiesLabel>Machine Learning</TechnologiesLabel>
-                    </TechnologiesBox>
+                    <div id="tecnologiesBrainTumorSystem">
+                        <h2>
+                            <img src="./images/CodeIcon.png" alt="Code Icon" />
+                            <div>Tecnologias</div>
+                        </h2>
+                        <TechnologiesBox className="col-10 gap-1">
+                            <TechnologiesLabel>Python</TechnologiesLabel>
+                            <TechnologiesLabel>Yolo</TechnologiesLabel>
+                            <TechnologiesLabel>Ultralytics</TechnologiesLabel>
+                            <TechnologiesLabel>Deep Learning</TechnologiesLabel>
+                            <TechnologiesLabel>Machine Learning</TechnologiesLabel>
+                        </TechnologiesBox>
+                    </div>
+                    
 
                     {/* Site logo displayed only when the screen size is below 1300px */}
                     <MobileLogo>
@@ -542,7 +549,7 @@ export function InfoProjectDetails({ nameProject }) {
                     
                     {/* Div to display the information buttons */}
                     <div className="d-flex gap-lg-5 gap-3">
-                        <InfoButtons>
+                        <InfoButtons onClick={() => document.getElementById("tecnologiesWebPortfolio")?.scrollIntoView({ behavior: "smooth" })}>
                             <div className="circle"> 
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
@@ -552,7 +559,7 @@ export function InfoProjectDetails({ nameProject }) {
                             </div>
                         </InfoButtons>
 
-                        <InfoButtons>
+                        <InfoButtons onClick={() => window.open("https://github.com/AdrianoBarrosDev/WebPortfolio", "_blank")}>
                             <div className="circle"> 
                                 <img src="./images/CodeIcon.png" alt="Code Icon" />
                             </div>
@@ -568,20 +575,22 @@ export function InfoProjectDetails({ nameProject }) {
                     </MobileBestFeatures>
 
                     {/* Tecnologies Section */}
-                    <h2>
-                        <img src="./images/CodeIcon.png" alt="Code Icon" />
-                        <div>Tecnologias</div>
-                    </h2>
-                    <TechnologiesBox className="col-10 gap-1">
-                        <TechnologiesLabel>HTML</TechnologiesLabel>
-                        <TechnologiesLabel>CSS</TechnologiesLabel>
-                        <TechnologiesLabel>JavaScript</TechnologiesLabel>
-                        <TechnologiesLabel>Three.JS</TechnologiesLabel>
-                        <TechnologiesLabel>React</TechnologiesLabel>
-                        <TechnologiesLabel>Vite</TechnologiesLabel>
-                        <TechnologiesLabel>Styled Components</TechnologiesLabel>
-                        <TechnologiesLabel>BootStrap</TechnologiesLabel>
-                    </TechnologiesBox>
+                    <div id="tecnologiesWebPortfolio">
+                        <h2>
+                            <img src="./images/CodeIcon.png" alt="Code Icon" />
+                            <div>Tecnologias</div>
+                        </h2>
+                        <TechnologiesBox className="col-10 gap-1">
+                            <TechnologiesLabel>HTML</TechnologiesLabel>
+                            <TechnologiesLabel>CSS</TechnologiesLabel>
+                            <TechnologiesLabel>JavaScript</TechnologiesLabel>
+                            <TechnologiesLabel>Three.JS</TechnologiesLabel>
+                            <TechnologiesLabel>React</TechnologiesLabel>
+                            <TechnologiesLabel>Vite</TechnologiesLabel>
+                            <TechnologiesLabel>Styled Components</TechnologiesLabel>
+                            <TechnologiesLabel>BootStrap</TechnologiesLabel>
+                        </TechnologiesBox>
+                    </div>
 
                     {/* Site logo displayed only when the screen size is below 1300px */}
                     <MobileLogo>
