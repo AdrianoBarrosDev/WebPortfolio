@@ -95,6 +95,7 @@ function Brain() {
       style={{
         width: `${width}px`, // Dynamically set width based on window size
         height: "100vh", // Make height full screen
+        position: "relative",
       }}
     />
   );

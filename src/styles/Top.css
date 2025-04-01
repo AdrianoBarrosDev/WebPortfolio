@@ -1,3 +1,5 @@
+import canvas 
+
 
 /* Config titles */
 h1 {
@@ -89,16 +91,44 @@ h2 {
 
 /* Div of the 3D Brain Model */
 .brain {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -150px;
+    left: 0;
+    overflow: hidden;
     margin-left: 12vw;
+}
+.mobileBrain {
+    display: none;
+    margin-top: -185px;
+    margin-left: -8px;
+    z-index: 0;
+    overflow: hidden;
+}
+.boxMoveBrain {
+    display: none;
+    overflow: hidden;
+    height: 340px; 
 }
 
 
 /* Config Mobile */
-@media (max-width: 992px) {
+@media (min-width: 768px) {
+    .boxMoveBrain {
+        height: 440px;
+    }
+}
+
+@media (max-width: 991px) {
 
     .mobile {
         width: 100%;
         justify-content: center;
+
+        p{
+            padding-inline: 12px;
+        }
     }
     .container-fluid {
         margin-top: 30px;
@@ -110,6 +140,13 @@ h2 {
     }
     .brain {
         margin-left: 0;
+        display: none;
+    }
+    .mobileBrain {
+        display: block;
+    }
+    .boxMoveBrain {
+        display: block;
     }
 
     h1 {

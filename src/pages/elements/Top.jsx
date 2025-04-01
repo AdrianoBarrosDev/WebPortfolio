@@ -22,7 +22,7 @@ export function Top(props) {
             <div className="row position-relative">
 
                 <div 
-                    className="col-12 col-lg-7" 
+                    className="col-12 col-lg-7 position-relative" 
                     style={{ zIndex: "1" }}
 
                     // Animations
@@ -30,42 +30,52 @@ export function Top(props) {
                     data-aos-duration="800"
                     data-aos-easing="ease-in-out"
                 >
+                        
+                    <div style={{zIndex: 1, background: "transparent"}}>
+                        <header className="mobile hidden">
+                            <div className="d-flex align-items-center mobile">
+                                <h1>Hi, I&apos;m Adriano Barros</h1>
+                                <Rectangle bootstrapConfig="d-none d-md-block ms-5" width="10px" height="92px"></Rectangle>
+                            </div>
+                            <h2 className="waveColor d-flex justify-content-center justify-content-lg-start">
+                                Software & <br /> Web Developer
+                            </h2>
+                        </header>
 
-                    <header className="mobile hidden">
-                        <div className="d-flex align-items-center mobile">
-                            <h1>Hi, I&apos;m Adriano Barros</h1>
-                            <Rectangle bootstrapConfig="d-none d-md-block ms-5" width="10px" height="92px"></Rectangle>
+                        {/* Buttons */}
+                        <div className="row my-4 py-lg-5 mobile hidden">
+                            <button
+                                type="button"
+                                className="me-md-5 contactButton contactButton-white contactButton-animated"
+                                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                            >
+                                Contact Me
+                            </button>
+                            <button
+                                type="button"
+                                className="mx-5 linkButton githubButton"
+                                target="_blank"
+                                onClick={() =>
+                                    window.open("https://github.com/AdrianoBarrosDev", "_blank")
+                                }
+                            />
+                            <button
+                                type="button"
+                                className="linkButton linkedinButton"
+                                onClick={() =>
+                                    window.open("https://www.linkedin.com/in/adrianobarrosdev/", "_blank")
+                                }
+                            />
                         </div>
-                        <h2 className="waveColor d-flex justify-content-center justify-content-lg-start">
-                            Software & <br /> Web Developer
-                        </h2>
-                    </header>
-
-                    {/* Buttons */}
-                    <div className="row my-4 py-5 mobile hidden">
-                        <button
-                            type="button"
-                            className="me-md-5 contactButton contactButton-white contactButton-animated"
-                            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                        >
-                            Contact Me
-                        </button>
-                        <button
-                            type="button"
-                            className="mx-5 linkButton githubButton"
-                            target="_blank"
-                            onClick={() =>
-                                window.open("https://github.com/AdrianoBarrosDev", "_blank")
-                            }
-                        />
-                        <button
-                            type="button"
-                            className="linkButton linkedinButton"
-                            onClick={() =>
-                                window.open("https://www.linkedin.com/in/adrianobarrosdev/", "_blank")
-                            }
-                        />
                     </div>
+                    
+                        
+                    <div className="boxMoveBrain">
+                        <div className="mobileBrain">
+                            <Brain />
+                        </div>
+                    </div>
+                    
 
                     {/* Informations about me */}
                     <div className="informations mobile hidden">
@@ -88,17 +98,7 @@ export function Top(props) {
 
                 </div>
 
-                <div
-                    className="brain d-block p-0"
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        position: "absolute",
-                        top: "-150px",
-                        left: "0",
-                        overflow: "hidden",
-                    }}
-                >
+                <div className="brain p-0">
                     <Brain />
                 </div>
 
