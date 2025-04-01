@@ -93,8 +93,8 @@ const ToggleViewButton = styled.button`
 
 export function ProjectsContent() {
 
-    const projectList = ["healthyClinics", "brainTumorSystem", "webPortfolio", "healthyClinics", "brainTumorSystem", "webPortfolio"];
-    const initialProjects = projectList.slice(0, 7);
+    const projectList = ["healthyClinics", "brainTumorSystem", "webPortfolio"];
+    const initialProjects = projectList.slice(0, 4);
     const [labelButton, setLabelButton] = useState("Mostrar Mais");
 
     const handleClick = () => {
