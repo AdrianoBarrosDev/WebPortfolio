@@ -28,6 +28,13 @@ const ContentButton = styled.button`
         height: 19px;
     }
 
+    &:hover{
+        background: ${(props) =>
+        !props.selected
+            ? '#1A1E24'
+            : ''};
+    }
+
     /* Responsiveness Config */
     @media (max-width: 1785px) {
         width: 20vw;

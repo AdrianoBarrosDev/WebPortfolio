@@ -111,11 +111,16 @@ const NavigationButton = styled.button`
     font-weight: bold;
     font-family: "Readex Pro", serif;
     gap: 16px;
+    transition: background-color 0.3s ease-in-out;
 
     img {
         transform: rotate(180deg);
         width: 16px;
         height: 15px;
+    }
+
+    &:hover {
+        background-color: #2A2F3A;
     }
 
     /* Mobile Config */
@@ -142,11 +147,12 @@ const InfoButtons = styled.button`
     margin-top: 40px;
     color: #9696A6;
     background-color: #12151A;
-    border: 1px solid #2D2E4D;
+    border: none;
     border-radius: 5px;
     font-family: "Readex Pro", serif;
     font-weight: bold;
     gap: 11px;
+    transition: background-color 0.3s ease-in-out;
 
     img {
         width: 27px;
@@ -173,6 +179,10 @@ const InfoButtons = styled.button`
     .number {
         font-size: 20px;
         text-align: start;
+    }
+
+    &:hover {
+        background-color: #2A2F3A;
     }
 
     /* Mobile Config */
@@ -210,7 +220,7 @@ const TechnologiesLabel = styled.div`
     height: 53px;
     padding: 12px 15px 12px 44px;
     background-color: #12151A;
-    border: 1px solid #2D2E4D;
+    border: none;
     border-radius: 5px;
     color: rgb(255, 255, 255, 0.75);
     font-size: 18px;
@@ -303,7 +313,7 @@ export function InfoProjectDetails({ nameProject }) {
             <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
                 
                 {/* Left column when the screen size is above 1300px and changes to main column below that */}
-                <LeftColumn className="col-lg-5">
+                <LeftColumn className="col-lg-5" data-aos="fade-right" data-aos-duration="800">
 
                     {/* Div to display the navigation buttons and the breadcrumb */}
                     <div className="d-flex align-items-center gap-lg-4 gap-3">
@@ -393,7 +403,7 @@ export function InfoProjectDetails({ nameProject }) {
                 </LeftColumn>
 
                 {/* Right column when the screen size is above 1300px */}
-                <RightColumn>
+                <RightColumn data-aos="fade-left" data-aos-duration="800">
                     <img src="./images/HealthyClinicsThumb.png" alt="Healthy Clinics" />
                     <BestFeaturesProject nameProject={nameProject} />
                 </RightColumn>
@@ -409,7 +419,7 @@ export function InfoProjectDetails({ nameProject }) {
             <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
                     
                 {/* Left column when the screen size is above 1300px and changes to main column below that */}
-                <LeftColumn className="col-lg-5">
+                <LeftColumn className="col-lg-5" data-aos="fade-right" data-aos-duration="800">
 
                     {/* Div to display the navigation buttons and the breadcrumb */}
                     <div className="d-flex align-items-center gap-lg-4 gap-3">
@@ -430,7 +440,7 @@ export function InfoProjectDetails({ nameProject }) {
 
                     {/* Div to display the project image when the screen size is below 1300px */}
                     <MobileProjectImage>
-                        <img src="./images/BrainTumorSystemThumb.png" alt="Healthy Clinics" />
+                        <img src="./images/BrainTumorSystemThumb.png" alt="Brain Tumor System" />
                     </MobileProjectImage>
 
                     {/* Informations about the project */}
@@ -499,8 +509,8 @@ export function InfoProjectDetails({ nameProject }) {
                 </LeftColumn>
 
                 {/* Right column when the screen size is above 1300px */}
-                <RightColumn>
-                    <img src="./images/BrainTumorSystemThumb.png" alt="Healthy Clinics" />
+                <RightColumn data-aos="fade-left" data-aos-duration="800">
+                    <img src="./images/BrainTumorSystemThumb.png" alt="Brain Tumor System" />
                     <BestFeaturesProject nameProject={nameProject} />
                 </RightColumn>
                 
@@ -515,7 +525,7 @@ export function InfoProjectDetails({ nameProject }) {
             <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
                 
                 {/* Left column when the screen size is above 1300px and changes to main column below that */}
-                <LeftColumn className="col-lg-5">
+                <LeftColumn className="col-lg-5" data-aos="fade-right" data-aos-duration="800">
 
                     {/* Div to display the navigation buttons and the breadcrumb */}
                     <div className="d-flex align-items-center gap-lg-4 gap-3">
@@ -536,7 +546,7 @@ export function InfoProjectDetails({ nameProject }) {
 
                     {/* Div to display the project image when the screen size is below 1300px */}
                     <MobileProjectImage>
-                        <img src="./images/WebPortfolioThumb.png" alt="Healthy Clinics" />
+                        <img src="./images/WebPortfolioThumb.png" alt="Web Portfolio" />
                     </MobileProjectImage>
 
                     {/* Informations about the project */}
@@ -603,8 +613,8 @@ export function InfoProjectDetails({ nameProject }) {
                 </LeftColumn>
 
                 {/* Right column when the screen size is above 1300px */}
-                <RightColumn>
-                    <img src="./images/WebPortfolioThumb.png" alt="Healthy Clinics"/>
+                <RightColumn data-aos="fade-left" data-aos-duration="800">
+                    <img src="./images/WebPortfolioThumb.png" alt="Web Portfolio"/>
                     <BestFeaturesProject nameProject={nameProject} />
                 </RightColumn>
                 

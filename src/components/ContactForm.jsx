@@ -109,6 +109,34 @@ const SubmitButton = styled.button`
     border: none;
     border-radius: 5px;
     padding: 10px;
+    position: relative;
+    transition: border 0.2s ease;
+    z-index: 1;
+
+    img {
+        width: 18px;
+        height: 18px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #2D2E4D, #696BB3);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease-in-out;
+        z-index: -1;
+        border-radius: 5px;
+    }
+
+    &:hover::before,
+    &:focus::before {
+        transform: scaleX(1);
+    }
 `;
 
 

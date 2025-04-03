@@ -94,11 +94,16 @@ const DetailsButton = styled.button`
     font-family: "Readex Pro", serif;
     padding: 12px;
     gap: 13px;
+    transition: background-color 0.3s ease-in-out;
 
     img {
         width: 15px;
         height: 15px;
         margin-top: 1px;
+    }
+
+    &:hover {
+        background-color: #2A2F3A;
     }
 `;
 

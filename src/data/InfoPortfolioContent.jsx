@@ -89,6 +89,11 @@ const ToggleViewButton = styled.button`
     font-size: 12px;
     font-weight: bold;
     font-family: "Readex Pro", serif;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #2A2F3A;
+    }
 `;
 
 export function ProjectsContent() {

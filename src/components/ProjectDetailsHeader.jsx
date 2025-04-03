@@ -37,7 +37,7 @@ const LogoButton = styled.button`
 export function ProjectDetailsHeader() {
 
     return (
-        <CustomHeader>
+        <CustomHeader data-aos="fade-down" data-aos-duration="800">
             <LogoButton onClick={() => window.location.href="/"}>
                 <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
             </LogoButton>
