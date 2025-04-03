@@ -209,32 +209,39 @@ export function ContactForm() {
             <form
                 ref={formRef}
                 onSubmit={handleSubmit}
+                autoComplete="on"
             >
                 <label htmlFor="name">Nome</label>
                 <input 
-                    type="text" 
+                    type="text"
+                    id="name"
                     name="name" 
                     value={form.name} 
                     placeholder="Qual o seu nome?"
                     onChange={handleChange}
+                    autoComplete="name"
                 />
 
                 <label htmlFor="email">Email</label>
                 <input 
-                    type="text" 
+                    type="text"
+                    id="email"
                     name="email" 
                     value={form.email} 
                     placeholder="Qual o seu email?" 
                     onChange={handleChange}
+                    autoComplete="email"
                 />
 
                 <label htmlFor="message">Mensagem</label>
                 <textarea 
-                    className="messageInput" 
-                    type="text" name="message" 
+                    type="text"
+                    id="message" 
+                    name="message" 
                     value={form.message} 
                     placeholder="O que você quer dizer?" 
                     onChange={handleChange}
+                    autoComplete="off"
                 />
 
                 <SubmitButton
