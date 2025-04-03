@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Buttons } from "../../components/ExperienceButtons";
 import { ActiveExperienceProvider } from "../../contexts/ActiveExperienceContext";
 import { ExperienceDetails } from "../../data/InfoBoxExperience";
-import "../../styles/Experience.css";
 import "../../styles/Global.css";
 
 /* Custom Section */

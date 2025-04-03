@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CustomFooter = styled.div`
+const CustomFooter = styled.footer`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,6 +8,7 @@ const CustomFooter = styled.div`
     height: 18vh;
     margin-top: 150px;
     overflow: hidden;
+    z-index: 1;
 
     p { 
         text-align: center;

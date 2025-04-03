@@ -119,7 +119,7 @@ export function Sidebar() {
     }, []);
 
     return (
-        <div style={{ position: "relative" }}>
+        <div style={{ position: "relative", zIndex: "2" }}>
             <CenterDiv className="row p-0 hidden" ref={sidebarRef}>
 
                     <div className="d-flex justify-content-end col p-0">

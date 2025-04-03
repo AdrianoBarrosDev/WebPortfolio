@@ -1,42 +1,10 @@
 import PropTypes from "prop-types";
+import { useRef } from "react";
 import styled from "styled-components";
+import { ContactForm } from "../../components/ContactForm.jsx";
+import Earth from "../../components/Earth";
+import Stars from "../../components/Stars";
 import "../../styles/Global.css";
-
-/* Box to Contact Informations */
-const InfoBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 80px;
-    padding: 0;
-    color: #9696A6;
-
-    .title {
-        font-size: 60px;
-        font-weight: bold;
-        font-family: "Readex Pro", serif;
-    }
-    p {
-        font-family: "Poppins", serif;
-        font-size: 25px;
-        font-weight: bold;
-    }
-
-    /* Config Mobile */
-    @media (max-width: 992px) {
-
-        .title {
-            font-size: 40px;
-        }
-        p {
-            font-size: 15px;
-        }
-
-    }
-
-`;
 
 /* Circle to profile image */
 const Circle = styled.div`
@@ -55,29 +23,54 @@ const Circle = styled.div`
     z-index: 1;
 `;
 
-/* Contact Buttons */
-const ContactButtons = styled.button`
-    color: #FFFFFF;
-    font-family: "Poppins", serif;
-    font-weight: 200;
-    font-size: 20px;
-    background-color: transparent;
-    border: none;
-    margin-block: 5px;
+const StarDiv = styled.div`
+    position: absolute;
+    margin-top: "-100px";
+    z-index: 0;
+    overflow: hidden;
 
-    /* Config Mobile */
-    @media (max-width: 992px) {
-        font-size: 18px;
+    @media (max-width: 1440px) {
+        height: 200vh;
+    }
+`;
+
+const EarthDiv = styled.div`
+    margin-left: 280px; 
+    overflow: visible; 
+    position: absolute;
+
+    @media (max-width: 1440px) {
+        margin-left: 0px;
+        margin-top: -100px;
+        position: relative;
+    }
+`;
+
+const ContactDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    @media (max-width: 1440px) {
+        flex-direction: column;
+        justify-content: center;
     }
 `;
 
 export function Contact(props) {
-    return (
-        <section className="container-fluid p-0" id={props.id}>
 
+    const parentDivRef = useRef();
+
+    return (
+        <section className="container-fluid p-0 overflow-hidden position-relative" id={props.id}>
+
+            {/* Profile Image */}
             <div 
                 className="row align-items-center" 
-                style={{ position: "relative" }} 
+                style={{ position: "relative", zIndex: "1" }} 
                 
                 // Animations
                 data-aos="fade-up" 
@@ -93,33 +86,28 @@ export function Contact(props) {
 
             </div>
 
-            <InfoBox 
-                className="row"
+            {/* 3D stars model */}
+            <StarDiv ref={parentDivRef}>
+                <Stars parentDivRef={parentDivRef} />
+            </StarDiv>
+
+            {/* Contact Section */}
+            <ContactDiv>
                 
-                // Animations
-                data-aos="fade-down" 
-                data-aos-duration="800"
-            >
-
-                <h2 className="waveColor title">Contact</h2>
-                <p style={{margin: "68px 0px 58px 0px"}}>Você pode me contatar pelas seguintes opções</p>
-
-                <ContactButtons 
-                    className="d-flex align-items-center justify-content-center gap-3"
-                    type="button"
-                    onClick={() => window.open("https://www.linkedin.com/in/adrianobarrosdev/", "_blank")}>
-
-                    <div className="linkButton linkedinButton" style={{border: "1px solid white"}}/>
-                    Adriano Barros
-                </ContactButtons>
-                <ContactButtons className="d-flex align-items-center justify-content-center gap-3" type="button">
-                    <div className="linkButton emailButton" style={{border: "1px solid white"}}/>
-                    Adriano Barros
-                </ContactButtons>
-
-                <p style={{marginTop: "58px"}}>Será um prazer trabalhar com você!</p>
-
-            </InfoBox>
+                {/* 3D earth model */}
+                <EarthDiv
+                    // Animation
+                    data-aos="fade-left" 
+                    data-aos-duration="800"
+                >
+                    <Earth />
+                </EarthDiv>
+                
+                {/* Contact form component that allows user to send a messagge via email */}
+                <ContactForm/>
+                
+            </ContactDiv>
+            
 
         </section>
     );

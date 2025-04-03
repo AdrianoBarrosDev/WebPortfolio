@@ -21,9 +21,7 @@ export function Home() {
 
             <Experience id='experience'/>
             <Contact id='contact'/>
-            <footer>
-                <Footer />
-            </footer>
+            <Footer />
         </>
     );
 }
