@@ -162,4 +162,76 @@ export function BestFeaturesProject({ nameProject }) {
         );
     }
 
+    if(nameProject == "inovaRede") {
+        return (
+            <BestFeatures>
+                <div className="d-flex gap-3">
+                    <img src="./images/FeatureIcon.png" alt="Feature Icon" style={{ width: "33px", height: "33px" }}/>
+                    <h2 className="titleFeatures">Principais Funcionalidades</h2>
+                </div>
+
+                <div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Cadastro e Login</div>
+                    </div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Dashboard com Listagem e Filtros de Projetos</div>
+                    </div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Solicitação de Participação em Projetos</div>
+                    </div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Gestão de Projetos Criados e Participações</div>
+                    </div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Atualização dos Dados do Usuário</div>
+                    </div>
+                </div>
+            </BestFeatures>
+        );
+    }
+
+    if(nameProject == "inovaRedeServer") {
+        return (
+            <BestFeatures>
+                <div className="d-flex gap-3">
+                    <img src="./images/FeatureIcon.png" alt="Feature Icon" style={{ width: "33px", height: "33px" }}/>
+                    <h2 className="titleFeatures">Principais Funcionalidades</h2>
+                </div>
+
+                <div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Usuários: Criar, ler, atualizar, deletar.</div>
+                    </div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Projetos: Criar, ler, atualizar, deletar.</div>
+                    </div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Solicitações: Criar, ler, atualizar, deletar.</div>
+                    </div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Projetos do Usuário: Listar projetos.</div>
+                    </div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Solicitações do Usuário: Listar solicitações.</div>
+                    </div>
+                    <div className="d-flex justify-content-start align-items-center gap-2">
+                        <div className="circle" />
+                        <div className="features">Login: Autenticar usuário.</div>
+                    </div>
+                </div>
+            </BestFeatures>
+        );
+    }
+
 }

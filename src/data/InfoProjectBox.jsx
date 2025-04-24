@@ -181,4 +181,52 @@ export function InfoProjectBox ({ nameProject }) {
         );
     }
 
+    if(nameProject === "inovaRede") {
+        return (
+            <Information>
+
+                <img src="./images/InovaRedeThumb.png" alt="Inova Rede"/>
+                <h4>Inova Rede</h4>
+                <p>Sistema de rede de projetos para integração de estudantes, professores e profissionais de cada área para o desenvolvimento de projetos.</p>
+                <div className="col-12 d-flex justify-content-between">
+                    <ProjectButton 
+                        target="_blank"
+                        onClick={() => window.open("https://github.com/AdrianoBarrosDev/InovaRede")}>
+                        Projeto Github
+                        <img src="./images/LinkIcon.png" alt="Link Icon" />
+                    </ProjectButton>
+                    <DetailsButton onClick={() => window.location.href="/inovaRede"}>
+                        Detalhes
+                        <img src="./images/DetailsArrow.png" alt="Arrow Icon" />
+                    </DetailsButton>
+                </div>
+                
+            </Information>
+        );
+    }
+
+    if(nameProject === "inovaRedeServer") {
+        return (
+            <Information>
+
+                <img src="./images/ServerThumb.png" alt="Inova Rede Server"/>
+                <h4>Inova Rede API</h4>
+                <p>API do Inova Rede para gerenciamento de usuários, projetos e solicitações de participação, desenvolvida em Java com Spring Boot e arquitetura RESTful.</p>
+                <div className="col-12 d-flex justify-content-between">
+                    <ProjectButton 
+                        target="_blank"
+                        onClick={() => window.open("https://github.com/AdrianoBarrosDev/InovaRede-Server")}>
+                        Projeto Github
+                        <img src="./images/LinkIcon.png" alt="Link Icon" />
+                    </ProjectButton>
+                    <DetailsButton onClick={() => window.location.href="/inovaRedeServer"}>
+                        Detalhes
+                        <img src="./images/DetailsArrow.png" alt="Arrow Icon" />
+                    </DetailsButton>
+                </div>
+                
+            </Information>
+        );
+    }
+
 }

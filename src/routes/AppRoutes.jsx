@@ -9,6 +9,8 @@ export function AppRoutes() {
             <Route path='/healthyClinics' element={<DetailsPage nameProject="healthyClinics" />}/>
             <Route path='/brainTumorSystem' element={<DetailsPage nameProject="brainTumorSystem" />}/>
             <Route path='/webPortfolio' element={<DetailsPage nameProject="webPortfolio" />}/>
+            <Route path='/inovaRede' element={<DetailsPage nameProject="inovaRede" />}/>
+            <Route path='/inovaRedeServer' element={<DetailsPage nameProject="inovaRedeServer" />}/>
         </Routes>
     );
 }

@@ -538,7 +538,7 @@ export function InfoProjectDetails({ nameProject }) {
                             <div className="separator">&gt;</div>
                             <div className="last">Web Portfolio</div>
                         </BreadCrumb>
-                        <NavigationButton onClick={() => window.location.href="/healthyClinics"}>
+                        <NavigationButton onClick={() => window.location.href="/inovaRede"}>
                             Próximo
                             <img src="./images/DetailsArrow.png" alt="Arrow" style={{transform: "rotate(0deg)"}}/>
                         </NavigationButton>
@@ -615,6 +615,212 @@ export function InfoProjectDetails({ nameProject }) {
                 {/* Right column when the screen size is above 1300px */}
                 <RightColumn data-aos="fade-left" data-aos-duration="800">
                     <img src="./images/WebPortfolioThumb.png" alt="Web Portfolio"/>
+                    <BestFeaturesProject nameProject={nameProject} />
+                </RightColumn>
+                
+            </div>
+        );
+    }
+
+    // If the project to be displayed is "Inova Rede"
+    if(nameProject === "inovaRede") {
+        return (
+            <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
+                
+                {/* Left column when the screen size is above 1300px and changes to main column below that */}
+                <LeftColumn className="col-lg-5" data-aos="fade-right" data-aos-duration="800">
+
+                    {/* Div to display the navigation buttons and the breadcrumb */}
+                    <div className="d-flex align-items-center gap-lg-4 gap-3">
+                        <NavigationButton onClick={() => window.history.back()}>
+                            <img src="./images/DetailsArrow.png" alt="Arrow"/>
+                            Voltar
+                        </NavigationButton>
+                        <BreadCrumb>
+                            <div className="first">Projects</div>
+                            <div className="separator">&gt;</div>
+                            <div className="last">Inova Rede</div>
+                        </BreadCrumb>
+                        <NavigationButton onClick={() => window.location.href="/inovaRedeServer"}>
+                            Próximo
+                            <img src="./images/DetailsArrow.png" alt="Arrow" style={{transform: "rotate(0deg)"}}/>
+                        </NavigationButton>
+                    </div>
+
+                    {/* Div to display the project image when the screen size is below 1300px */}
+                    <MobileProjectImage>
+                        <img src="./images/InovaRedeThumb.png" alt="Inova Rede" />
+                    </MobileProjectImage>
+
+                    {/* Informations about the project */}
+                    <h1>Inova Rede</h1>
+                    <p>
+                        Inova Rede é uma plataforma digital desenvolvida para promover a colaboração entre estudantes, professores e profissionais de diferentes áreas por meio do desenvolvimento conjunto de projetos acadêmicos, 
+                        profissionais e de pesquisa. O sistema oferece funcionalidades como cadastro com diferentes tipos de perfil, dashboard com listagem e filtros de projetos, envio de solicitações de participação, 
+                        gestão de projetos criados e participações ativas. Cada usuário possui um perfil personalizado com histórico e opção de edição. A plataforma também prevê funcionalidades futuras, como chat interno, 
+                        sistema de avaliações, certificados, feed de atualizações e integração com ferramentas externas como GitHub, Figma e Google Drive.
+                    </p>
+                    
+                    {/* Div to display the information buttons */}
+                    <div className="d-flex gap-lg-5 gap-3">
+                        <InfoButtons onClick={() => document.getElementById("tecnologiesInovaRede")?.scrollIntoView({ behavior: "smooth" })}>
+                            <div className="circle"> 
+                                <img src="./images/CodeIcon.png" alt="Code Icon" />
+                            </div>
+                            <div>
+                                <div className="number">7</div>
+                                <div className="secondaryText">Tecnologias Usadas</div>
+                            </div>
+                        </InfoButtons>
+
+                        <InfoButtons onClick={() => window.open("https://github.com/AdrianoBarrosDev/InovaRede", "_blank")}>
+                            <div className="circle"> 
+                                <img src="./images/CodeIcon.png" alt="Code Icon" />
+                            </div>
+                            <div>
+                                <div className="mainText">Projeto Github</div>
+                            </div>
+                        </InfoButtons>
+                    </div>
+
+                    {/* Displayed the best features on mobile screens when the screen size is below 1300px */}
+                    <MobileBestFeatures>
+                        <BestFeaturesProject nameProject={nameProject}/>
+                    </MobileBestFeatures>
+
+                    {/* Tecnologies Section */}
+                    <div id="tecnologiesInovaRede">
+                        <h2>
+                            <img src="./images/CodeIcon.png" alt="Code Icon" />
+                            <div>Tecnologias</div>
+                        </h2>
+                        <TechnologiesBox className="col-10 gap-1">
+                            <TechnologiesLabel>HTML</TechnologiesLabel>
+                            <TechnologiesLabel>CSS</TechnologiesLabel>
+                            <TechnologiesLabel>JavaScript</TechnologiesLabel>
+                            <TechnologiesLabel>React</TechnologiesLabel>
+                            <TechnologiesLabel>Vite</TechnologiesLabel>
+                            <TechnologiesLabel>Styled Components</TechnologiesLabel>
+                            <TechnologiesLabel>BootStrap</TechnologiesLabel>
+                        </TechnologiesBox>
+                    </div>
+
+                    {/* Site logo displayed only when the screen size is below 1300px */}
+                    <MobileLogo>
+                        <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
+                    </MobileLogo>
+
+                    {/* Mobile footer displayed only when the screen size is below 1300px */}
+                    <MobileFooter/>
+                    
+                </LeftColumn>
+
+                {/* Right column when the screen size is above 1300px */}
+                <RightColumn data-aos="fade-left" data-aos-duration="800">
+                    <img src="./images/InovaRedeThumb.png" alt="Inova Rede"/>
+                    <BestFeaturesProject nameProject={nameProject} />
+                </RightColumn>
+                
+            </div>
+        );
+    }
+
+    // If the project to be displayed is "Inova Rede Server"
+    if(nameProject === "inovaRedeServer") {
+        return (
+            <div className="row d-flex justify-content-center" style={{gap: "200px"}}>
+                
+                {/* Left column when the screen size is above 1300px and changes to main column below that */}
+                <LeftColumn className="col-lg-5" data-aos="fade-right" data-aos-duration="800">
+
+                    {/* Div to display the navigation buttons and the breadcrumb */}
+                    <div className="d-flex align-items-center gap-lg-4 gap-3">
+                        <NavigationButton onClick={() => window.history.back()}>
+                            <img src="./images/DetailsArrow.png" alt="Arrow"/>
+                            Voltar
+                        </NavigationButton>
+                        <BreadCrumb>
+                            <div className="first">Projects</div>
+                            <div className="separator">&gt;</div>
+                            <div className="last">Inova Rede API</div>
+                        </BreadCrumb>
+                        <NavigationButton onClick={() => window.location.href="/healthyClinics"}>
+                            Próximo
+                            <img src="./images/DetailsArrow.png" alt="Arrow" style={{transform: "rotate(0deg)"}}/>
+                        </NavigationButton>
+                    </div>
+
+                    {/* Div to display the project image when the screen size is below 1300px */}
+                    <MobileProjectImage>
+                        <img src="./images/ServerThumb.png" alt="Inova Rede API" />
+                    </MobileProjectImage>
+
+                    {/* Informations about the project */}
+                    <h1>Inova Rede API</h1>
+                    <p>
+                        A API do sistema Inova Rede foi desenvolvida para viabilizar a colaboração entre estudantes, professores e profissionais no desenvolvimento conjunto de projetos. 
+                        Construída em Java com o framework Spring Boot, a API adota uma arquitetura RESTful e oferece recursos como autenticação de usuários, cadastro e gerenciamento de projetos, 
+                        controle de solicitações de participação e administração de perfis.
+                    </p>
+                    <p>
+                        Com integração ao banco de dados MySQL por meio do Spring Data JPA, a API garante operações de persistência seguras e eficientes. Projetada para se comunicar com aplicações 
+                        front-end via requisições HTTP e dados em formato JSON, sua estrutura modular e escalável facilita a manutenção e a evolução contínua da plataforma.
+                    </p>
+                    
+                    {/* Div to display the information buttons */}
+                    <div className="d-flex gap-lg-5 gap-3">
+                        <InfoButtons onClick={() => document.getElementById("tecnologiesInovaRedeServer")?.scrollIntoView({ behavior: "smooth" })}>
+                            <div className="circle"> 
+                                <img src="./images/CodeIcon.png" alt="Code Icon" />
+                            </div>
+                            <div>
+                                <div className="number">4</div>
+                                <div className="secondaryText">Tecnologias Usadas</div>
+                            </div>
+                        </InfoButtons>
+
+                        <InfoButtons onClick={() => window.open("https://github.com/AdrianoBarrosDev/InovaRede-Server", "_blank")}>
+                            <div className="circle"> 
+                                <img src="./images/CodeIcon.png" alt="Code Icon" />
+                            </div>
+                            <div>
+                                <div className="mainText">Projeto Github</div>
+                            </div>
+                        </InfoButtons>
+                    </div>
+
+                    {/* Displayed the best features on mobile screens when the screen size is below 1300px */}
+                    <MobileBestFeatures>
+                        <BestFeaturesProject nameProject={nameProject}/>
+                    </MobileBestFeatures>
+
+                    {/* Tecnologies Section */}
+                    <div id="tecnologiesInovaRedeServer">
+                        <h2>
+                            <img src="./images/CodeIcon.png" alt="Code Icon" />
+                            <div>Tecnologias</div>
+                        </h2>
+                        <TechnologiesBox className="col-10 gap-1">
+                            <TechnologiesLabel>JAVA</TechnologiesLabel>
+                            <TechnologiesLabel>SpringBoot</TechnologiesLabel>
+                            <TechnologiesLabel>MySQL</TechnologiesLabel>
+                            <TechnologiesLabel>Docker</TechnologiesLabel>
+                        </TechnologiesBox>
+                    </div>
+
+                    {/* Site logo displayed only when the screen size is below 1300px */}
+                    <MobileLogo>
+                        <img src="./images/WebsiteLogo.png" alt="Logo Website"/>
+                    </MobileLogo>
+
+                    {/* Mobile footer displayed only when the screen size is below 1300px */}
+                    <MobileFooter/>
+                    
+                </LeftColumn>
+
+                {/* Right column when the screen size is above 1300px */}
+                <RightColumn data-aos="fade-left" data-aos-duration="800">
+                    <img src="./images/ServerThumb.png" alt="Inova Rede API"/>
                     <BestFeaturesProject nameProject={nameProject} />
                 </RightColumn>
                 
