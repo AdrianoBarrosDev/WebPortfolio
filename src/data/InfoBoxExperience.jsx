@@ -84,7 +84,7 @@ export function DetailsSantoScuderi() {
     return (
         <InfoBox data-aos="fade-down" data-aos-duration="800">
             <h2>Maratona Santo Scuderi de Programação</h2>
-            <h3>1º Lugar | Medalha de OURO | 2024</h3>
+            <h3>1º Lugar | Medalha de OURO | 2025</h3>
             <Line />
 
             <div style={{ width: "calc(98%)", textAlign: "start" }}>
