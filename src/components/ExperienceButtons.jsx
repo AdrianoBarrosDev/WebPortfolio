@@ -74,7 +74,7 @@ const DropdownOption = styled.option`
 
 export function Buttons() {
 
-    const sections = ["unisantosBachelorDegree", "senacTechnicalCourse", "obi", "oboi"]; /* Experience sections */
+    const sections = ["unisantosBachelorDegree", "santoScuderi" ,"senacTechnicalCourse", "obi", "oboi"]; /* Experience sections */
     const { activeExperience, setActiveExperience } = useActiveSection(); /* State variable for managing the active experience section */
     const [marginTopValue, setMarginTopValue] = useState(0); /* State variable for controlling the top margin */
     const [windowWidth, setWindowWidth] = useState(window.innerWidth); /* State to track the current width of the window */

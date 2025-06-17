@@ -33,6 +33,16 @@ export function InfoButtonExperience( {experience, format} ) {
         );
     }
 
+    if(experience === "santoScuderi") {
+        if(format === "dropdown") return "Maratona Santo Scuderi";
+        return (
+            <Informations>
+                <p>Maratona Santo Scuderi</p>
+                <p style={{marginTop: "15px"}}>2025</p>
+            </Informations>
+        );
+    }
+
     if(experience === "senacTechnicalCourse") {
         if(format === "dropdown") return "Téc. Desenvolvimento de Sistemas";
         return (

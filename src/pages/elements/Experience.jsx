@@ -8,8 +8,7 @@ import "../../styles/Global.css";
 /* Custom Section */
 const ExperienceSection = styled.section`
     background-color: #1C2027; 
-    border-radius: 20px; 
-    height: 888px; 
+    border-radius: 20px;
     z-index: 0;
 
     /* Config Mobile */
@@ -28,7 +27,7 @@ const BoxExperience = styled.div`
 
     .title {
         width: 350px;
-        margin: 70px 0px 100px 0px; 
+        margin: 0px 0px 100px 0px; 
         font-size: 60px;
         font-weight: bold;
         font-family: "Readex Pro", serif;
@@ -43,7 +42,7 @@ const BoxExperience = styled.div`
         align-items: center;
         
         .title {
-            margin: 30px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
             width: 100%;
             font-size: 45px;
             text-align: center;
@@ -82,7 +81,7 @@ export function Experience(props) {
     return (
 
         /* Main container */
-        <ExperienceSection className="container-fluid p-0 position-relative" id={props.id} style={{marginBottom: "250px"}}>
+        <ExperienceSection className="container-fluid px-0 position-relative" id={props.id} style={{marginBottom: "250px"}}>
 
             <BoxExperience className="row col-lg-10 p-4 ps-lg-5">
 

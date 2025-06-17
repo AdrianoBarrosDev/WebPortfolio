@@ -38,10 +38,11 @@ const CertificateBox = styled.div`
     border: 1px solid #2D2E4D;
     border-radius: 5px;
     padding: 10px;
+    object-fit: cover;
 
     img {
         width: 100%;
-        height: auto;
+        height: 100%;
     }
 
     /* Mobile Config */
@@ -136,7 +137,7 @@ export function ProjectsContent() {
 
 export function CertificateContent() {
 
-    const certificateList = ["obi", "oboi"];
+    const certificateList = ["santoScuderi", "obi", "oboi", "senac"];
     return (
         <>
             <div className="row justify-content-center align-items-center gap-4" style={{marginTop: "60px"}}>

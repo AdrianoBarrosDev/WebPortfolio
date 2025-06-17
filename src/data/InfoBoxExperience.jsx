@@ -52,6 +52,7 @@ export function ExperienceDetails() {
             {activeExperience === "senacTechnicalCourse" && <DetailsSenac />}
             {activeExperience === "obi" && <DetailsOBI />}
             {activeExperience === "oboi" && <DetailsOBOI />}
+            {activeExperience === "santoScuderi" && <DetailsSantoScuderi />}
         </>
     );
 
@@ -74,6 +75,32 @@ export function DetailsUnisantos() {
                     em equipe e comunicar ideias técnicas de maneira clara. Minha formação também abrange conhecimentos em bancos de dados, redes de computadores e metodologias ágeis, 
                     ferramentas essenciais para enfrentar os desafios do mundo digital e contribuir com soluções inovadoras e robustas.
                 </p>
+            </div>
+        </InfoBox>
+    );
+}
+
+export function DetailsSantoScuderi() {
+    return (
+        <InfoBox data-aos="fade-down" data-aos-duration="800">
+            <h2>Maratona Santo Scuderi de Programação</h2>
+            <h3>1º Lugar | Medalha de OURO | 2024</h3>
+            <Line />
+
+            <div style={{ width: "calc(98%)", textAlign: "start" }}>
+                <p style={{fontSize: "16.5px"}}>
+                    Ao participar da Maratona Santo Scuderi de Programação, tive a honra de conquistar com o meu grupo o primeiro lugar, alcançando
+                    a medalha de ouro. A competição foi composta por uma série de desafios que exigiam pensamento lógico apurado, domínio de estruturas
+                    de dados e aplicação eficiente de algoritmos em situações complexas e com tempo limitado.
+                </p>
+                <p style={{fontSize: "16.5px"}}>
+                    Durante o evento, trabalhamos de forma colaborativa para resolver problemas envolvendo programação dinâmica, técnicas de busca,
+                    grafos e estratégias de otimização. A maratona foi uma oportunidade única de reforçar a importância do trabalho em equipe e da
+                    comunicação eficaz, além de aprimorar a capacidade de resolver problemas de forma rápida e precisa em um ambiente de alta pressão.
+                    Sem dúvida, essa experiência foi marcante para meu crescimento acadêmico e profissional.
+                </p>
+                <h4>Resultado</h4>
+                <p><strong>1º lugar</strong> e recebi a medalha de <strong>OURO</strong>.</p>
             </div>
         </InfoBox>
     );
